@@ -1,0 +1,20 @@
+<% if not @doutrinas.empty? %> <h3 style="text-align: center"><a>Doutrinas para <%= @crime.nome %></a></h3>
+<% @doutrinas.each do |doutrina| %>
+<p>
+	<b>Doutrinador:</b> <%= doutrina.autor.upcase %>
+</p>
+<p style="text-align: justify">
+	<%= textilize doutrina.corpo %>
+</p>
+<p>
+	<b>Referência:</b>
+	<%= textilize doutrina.ref %>
+</p>
+<hr class="thick" />
+<% end %>
+<% else %>
+<h3>Não foram cadastradas doutrinas...</h3>
+<% end %>
+<br/>
+<h3><a>Adicione uma doutrina:</a></h3>
+<%= render "doutrinas/form"%>

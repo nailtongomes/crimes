@@ -1,0 +1,26 @@
+<% if not @temas.empty? %>
+			<h3 style="text-align: center"><a>Temas para <%= @crime.nome %></a></h3>
+			<% @temas.each do |tema| %>
+			<p>
+			<b>Título:</b>
+			<%= tema.titulo %>
+			</p>
+			<p style="text-align: justify">
+			<%= textilize tema.corpo %>
+			</p>
+			<p>
+			<b>Autor:</b>
+			<%= tema.autor %>
+			</p>
+			<p>
+			<b>Referência:</b>
+			<%= tema.ref %>
+			</p>
+			<hr class="thick" />
+			<% end %>
+<% else %>
+	<h3>Não foram cadastrados temas...</h3>
+<% end %>
+<br/>
+<h3><a>Adicione um tema:</a></h3>
+<%= render "temas/form"%>

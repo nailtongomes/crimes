@@ -1,0 +1,22 @@
+<% if not @juris.empty? %>
+			<h3 style="text-align: center"><a>Juriprudência para <%= @crime.nome %></a></h3>
+			<% @juris.each do |juri| %>
+			<p style="text-align: justify">
+			<%= textilize juri.corpo %>
+			</p>
+			<p>
+			<b>Orgão:</b>
+			<%= juri.orgao %>
+			</p>
+			<p>
+			<b>Referência:</b>
+			<%= juri.ref %>
+			</p>
+			<hr class="thick" />
+			<% end %>
+<% else %>
+	<h3>Não foram cadastradas jurisprudências...</h3>
+<% end %>
+<br/>
+<h3><a>Adicione uma jurisprudência:</a></h3>
+<%= render "juris/form"%>

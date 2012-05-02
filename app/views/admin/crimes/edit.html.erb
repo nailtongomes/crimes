@@ -1,0 +1,13 @@
+<h2> Crime  <%= link_to " [ Pré-visualizar ]", [:admin, @crime] %> </h2> 
+
+<%= render 'form' %>
+
+<hr class="thick" />
+<p style="text-align: center">
+		<%= link_to "ESPÉCIES(#{@crime.modalidades.count.to_s})", admin_crime_modalidades_path(@crime.id), :class =>"button" %> 
+		<%= link_to "DOUTRINAS(#{@crime.doutrinas.count.to_s})", admin_crime_doutrinas_path(@crime.id), :class =>"button" %>
+		<%= link_to "JURISPRUDÊNCIAS(#{@crime.juris.count.to_s})", admin_crime_juris_path(@crime.id), :class =>"button" %>
+		<%= link_to "CASOS(#{@crime.casos.count.to_s})", admin_crime_casos_path(@crime.id), :class =>"button" %>
+		<%= link_to "TEMAS(#{@crime.temas.count.to_s})", admin_crime_temas_path(@crime.id), :class =>"button" %> 
+		<%= link_to "QUESTÕES(#{@crime.qts.count.to_s})", admin_crime_qts_path(@crime.id), :class =>"button" %>
+</p>

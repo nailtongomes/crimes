@@ -1,0 +1,29 @@
+	Error message for argumento.
+
+28/04/2012
+	P�ginas readaptadas
+	Adicionei Modalidades 
+	(rails g model modalidade titulo:string b_legal:text anotacoes:text pena:string crime:references)
+	
+	Adicionei Usuários
+	{parei aqui}
+	Adicionei Jurisprud�ncias
+	(rails g model juri tipo:string corpo:text crime:references)
+
+	Adicionei Casos
+	(rails g model caso desc:string corpo:text crime:references)
+
+	Adicionei Temas
+	(rails g model tema titulo:string corpo:text crime:references)
+
+	Adicionei Quest�es
+	(rails g model quest corpo:text resp:boolean crime:references)
+	Adicionar dic termos
+27/04/2012
+	Adicionei campo Pena para Crimes.
+	Alterei classifica��o para text.
+	Incrementei os seeds.
+26/04/2012
+	Adicionei formul�rio de contato e p�ginas.
+25/04/2012
+	Primeira vers�o online.

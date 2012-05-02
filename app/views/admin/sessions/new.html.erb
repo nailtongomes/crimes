@@ -1,0 +1,24 @@
+<h2>Autenticar</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+<p>
+	<%= f.text_field :email, :placeholder => ta(Usuario, :email) %>
+</p>
+<p>
+	<%= f.password_field :password, :placeholder => ta(Usuario, :password) %>
+</p>
+
+<% if devise_mapping.rememberable? -%>
+<p>
+	<%= f.check_box :remember_me %> Lembre-me
+</p>
+<% end -%>
+
+<hr class="thick" />
+
+<p>
+	<%= f.submit "Entrar", :class => "button" %>
+	or <%= link_to "Esqueceu sua senha?", new_password_path(resource_name) %>
+</p>
+<% end %>

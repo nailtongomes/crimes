@@ -1,0 +1,24 @@
+<% if not @qts.empty? %> <h3 style="text-align: center"><a>Questões para <%= @crime.nome %></a></h3>
+<% @qts.each do |qt| %>
+	<% if not qt.ativo %>
+	[ Desativado ]
+	<% else %>
+	[ Ativado ]
+	<% end %>
+<p style="text-align: justify">
+	<%= link_to textilize qt.assertiva, [:edit, :admin, qt.crime, qt] %>
+	<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, qt.crime, qt], :confirm => 'Tem certeza?', :method => :delete %> </h3>
+</p>
+<p>
+	<b>Resposta:</b>
+	<%= qt.resposta %>
+</p>
+<% end %>
+<% else %>
+<h3>Não foram cadastradas questões...</h3>
+<p style="text-align: center">
+	<%= link_to "[ Voltar ]", [:admin, @crime] %>
+</p>
+<% end %>
+<hr class="thick" />
+<%= link_to "Inserir Questão", new_admin_crime_qt_path, :class => "button" %>

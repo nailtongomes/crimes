@@ -1,0 +1,24 @@
+<%= form_for [:admin, @usuario] do |f| %>
+
+<%= error_messages_for @usuario %>
+
+<p>
+	<%= f.text_field :nome, :placeholder => "Nome" %> | <%= f.text_field :sobrenome, :placeholder => "Sobrenome" %>
+</p>
+<p>
+	<%= f.text_field :email, :placeholder => "E-Mail" %>
+</p>
+<p>
+	<%= f.password_field :password, :placeholder => "senha" %>
+</p>
+<p>
+<%= f.password_field :password_confirmation, :placeholder => "confirmação de senha" %>	
+</p>
+<hr class="thick" />
+
+<p>
+	<%= f.submit :class => "button" %>
+	ou <%= link_to "cancelar", admin_usuarios_path %>
+</p>
+
+<% end %>

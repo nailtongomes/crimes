@@ -1,0 +1,18 @@
+<%= form_for([:admin, @crime, @modalidade]) do |f| %>
+  <div class="field">
+    <%= f.text_field :titulo, :size => "70", :placeholder => "Título da Espécie", :class => "especie" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :b_legal, :cols => "69", :rows => "7", :placeholder => "Base legal", :class => "b_legal" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :pena, :size => "70", :placeholder => "Pena", :class => "pena" %>
+  </div>  
+  <div class="field">
+    <%= f.text_area :anotacoes, :cols => "69", :rows => "7", :placeholder => "Anotações", :class => "anotacoes" %>
+  </div>  
+  <div class="actions">
+  	<hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde..." %> ou <%= link_to "Cancelar", admin_crime_modalidades_path(@crime.id) %>
+  </div>
+<% end %>

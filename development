@@ -1,0 +1,52 @@
+-- create_table("casos", {:force=>true})
+   -> 0.3200s
+-- add_index("casos", ["crime_id"], {:name=>"index_casos_on_crime_id"})
+   -> 0.1200s
+-- create_table("ckeditor_assets", {:force=>true})
+   -> 0.2630s
+-- add_index("ckeditor_assets", ["assetable_type", "assetable_id"], {:name=>"idx_ckeditor_assetable"})
+   -> 0.1070s
+-- add_index("ckeditor_assets", ["assetable_type", "type", "assetable_id"], {:name=>"idx_ckeditor_assetable_type"})
+   -> 0.0920s
+-- create_table("contatos", {:force=>true})
+   -> 0.2660s
+-- create_table("crimes", {:force=>true})
+   -> 0.3180s
+-- create_table("doutrinas", {:force=>true})
+   -> 0.2330s
+-- add_index("doutrinas", ["crime_id"], {:name=>"index_doutrinas_on_crime_id"})
+   -> 0.1100s
+-- create_table("juris", {:force=>true})
+   -> 0.2600s
+-- add_index("juris", ["crime_id"], {:name=>"index_juris_on_crime_id"})
+   -> 0.1400s
+-- create_table("jurisprudencias", {:force=>true})
+   -> 0.2510s
+-- add_index("jurisprudencias", ["crime_id"], {:name=>"index_jurisprudencias_on_crime_id"})
+   -> 0.1300s
+-- create_table("modalidades", {:force=>true})
+   -> 0.2600s
+-- add_index("modalidades", ["crime_id"], {:name=>"index_modalidades_on_crime_id"})
+   -> 0.1300s
+-- create_table("qts", {:force=>true})
+   -> 0.4100s
+-- add_index("qts", ["crime_id"], {:name=>"index_qts_on_crime_id"})
+   -> 0.1200s
+-- create_table("questoes", {:force=>true})
+   -> 0.2900s
+-- add_index("questoes", ["crime_id"], {:name=>"index_questoes_on_crime_id"})
+   -> 0.1310s
+-- create_table("temas", {:force=>true})
+   -> 0.2690s
+-- add_index("temas", ["crime_id"], {:name=>"index_temas_on_crime_id"})
+   -> 0.1370s
+-- create_table("usuarios", {:force=>true})
+   -> 0.2530s
+-- add_index("usuarios", ["email"], {:name=>"index_usuarios_on_email", :unique=>true})
+   -> 0.1300s
+-- add_index("usuarios", ["reset_password_token"], {:name=>"index_usuarios_on_reset_password_token", :unique=>true})
+   -> 0.1410s
+-- initialize_schema_migrations_table()
+   -> 0.0000s
+-- assume_migrated_upto_version(20120430215553, ["C:/Sites/projetos/crimes/db/migrate"])
+   -> 0.0000s

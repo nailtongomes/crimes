@@ -1,0 +1,29 @@
+<% if not @temas.empty? %> <h3 style="text-align: center"><a>Temas para <%= @crime.nome %></a></h3>
+<% @temas.each do |tema| %>
+<h3 style="text-align: justify"><%= link_to tema.titulo, [:edit, :admin, tema.crime, tema] %>
+	<% if not tema.ativo %>
+	[ Desativado ]
+	<% else %>
+	[ Ativado ]
+	<% end %>
+<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, tema.crime, tema], :confirm => 'Tem certeza?', :method => :delete %> </h3>
+<p>
+	<b>Referência:</b>
+	<%= tema.autor %>
+</p>
+<p style="text-align: justify">
+	<%= textilize tema.corpo %>
+</p>
+<p>
+	<b>Referência:</b>
+	<%= textilize tema.ref %>
+</p>
+<% end %>
+<% else %>
+<h3>Não foram cadastradas temas...</h3>
+<p style="text-align: center">
+	<%= link_to "[ Voltar ]", [:admin, @crime] %>
+</p>
+<% end %>
+<hr class="thick" />
+<%= link_to "Inserir tema", new_admin_crime_tema_path, :class => "button" %>

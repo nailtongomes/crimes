@@ -1,0 +1,30 @@
+<% if not @modalidades.empty? %>
+<% content_for :sidebar do %>
+<ul>
+	<h2>Âncoras</h2>
+	<ul>
+		<% @modalidades.each do |modalidade| %>
+		<li>
+			<a href="#<%= modalidade.titulo %>"><%= modalidade.titulo %></a>
+		</li>
+		<% end %>
+	</ul>
+</ul>
+<% end %>
+
+<% @modalidades.each do |modalidade| %>
+<h3 style="text-align: justify"> <a name="<%= modalidade.titulo %>"><%= modalidade.titulo %></a></h3>
+<p style="text-align: justify">
+	<b>Base Legal:</b> <%= textilize modalidade.b_legal %>
+</p>
+<p style="text-align: justify">
+	<b>Pena:</b> <%= modalidade.pena %>
+</p>
+<p style="text-align: justify">
+	<b>Anotações:</b> <%= textilize modalidade.anotacoes %>
+</p>
+<% end %>
+<% else %>
+<h3 style="text-align: center">Espécies não foram cadastradas...</h3>
+<p style="text-align: center"><%= link_to "Clique aqui para voltar.", @crime %></p>
+<% end %>

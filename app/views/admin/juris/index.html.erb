@@ -1,0 +1,25 @@
+<% if not @juris.empty? %> <h3 style="text-align: center"><a>juris para <%= @crime.nome %></a></h3>
+<% @juris.each do |juri| %>
+<h3 style="text-align: justify"><%= link_to juri.orgao, [:edit, :admin, juri.crime, juri] %>
+	<% if not juri.ativo %>
+	[ Desativado ]
+	<% else %>
+	[ Ativado ]
+	<% end %>
+<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, juri.crime, juri], :confirm => 'Tem certeza?', :method => :delete %> </h3>
+<p style="text-align: justify">
+	<%= textilize juri.corpo %>
+</p>
+<p>
+	<b>Referência:</b>
+	<%= juri.ref %>
+</p>
+<% end %>
+<% else %>
+<h3>Não foram cadastradas jurisprudências...</h3>
+<p style="text-align: center">
+	<%= link_to "[ Voltar ]", [:admin, @crime] %>
+</p>
+<% end %>
+<hr class="thick" />
+<%= link_to "Inserir jurisprudência", new_admin_crime_juri_path, :class => "button" %>

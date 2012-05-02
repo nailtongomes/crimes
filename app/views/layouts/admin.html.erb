@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Crimes e Argumentos Jurídicos</title>
+		<%= stylesheet_link_tag "admin.css" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tag %>
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="header">
+				<% if usuario_signed_in? %>
+				<div id="main-nav">
+					<%= menu do |m| %>
+					<%= m.crimes 'Crimes', admin_crimes_path %>
+					<%= m.pendentes 'Pendências', admin_pendentes_path %>
+					<%= m.contatos 'Mensagens', admin_contatos_path %>
+					<%= m.usuarios 'Usuários', admin_usuarios_path %>
+					<% end %>
+				</div>
+
+				<div id="user-bar">
+					<%= link_to "Sair", destroy_usuario_session_path, :method => "delete" %>
+				</div>
+				<% end %>
+			</div>
+
+			<div id="content-wrapper">
+				<div id="content">
+					<div class="in">
+						<%= flash_messages %>
+						<%= yield %>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%= yield :bottom %>
+	</body>
+</html>

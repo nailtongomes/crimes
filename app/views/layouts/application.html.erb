@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>Crimes do Direito Penal Brasileiro</title>
+		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+		<link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
+		<%= stylesheet_link_tag "crimes.css" %>
+		<%= csrf_meta_tag %>
+	</head>
+	<body>
+		<div id="menu-wrapper">
+			<div id="menu">
+				<ul style="text-align: center">
+					<li>
+						<%= link_to "Início", root_path %>
+					</li>
+					<li>
+						<%= link_to "Crimes", crimes_path %>
+					</li>
+					<li>
+						<%= link_to "ARG.", arg_url %>
+					</li>
+					<li>
+						<%= link_to "Sentenças", sentencas_url %>
+					</li>
+					<li>
+						<%= link_to "Contato", new_contato_path %>
+					</li>
+					<li>
+						<%= link_to "Sobre", sobre_url %>
+					</li>
+					<li>
+						<%= link_to "Dic.", "#" %>
+					</li>
+					<li>
+						<%= link_to "Admin", admin_crimes_path %>
+					</li>
+				</ul>
+			</div>
+			<!-- end #menu -->
+		</div>
+		<div id="header-wrapper">
+			<div id="header">
+				<div id="logo">
+					<h1><a href="#">Crimes do <span>Direito Penal</span> Brasileiro</a></h1>
+					<br/>
+					<p>
+						v.0.0.11 [ em construção ]
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper">
+			<!-- end #header -->
+			<div id="page">
+				<div id="page-bgtop">
+					<div id="page-bgbtm">
+						<div id="content">
+							<div class="post">
+								<div>
+									<p class="notice">
+										<%= notice %>
+									</p>
+									<p class="alert">
+										<%= alert %>
+									</p>
+									<%= yield %>
+								</div>
+							</div>
+						</div>
+						<!-- end #content -->
+						<div id="sidebar">
+							<%= yield :sidebar %>
+						</div>
+						<!-- end #sidebar -->
+						<div style="clear: both;">
+							&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end #page -->
+		</div>
+		<div id="menu-bottom">
+			<div id="menu">
+				<ul>
+					<li>
+						<%= link_to "Início", root_path %>
+					</li>
+					<li>
+						<%= link_to "Crimes", crimes_path %>
+					</li>
+					<li>
+						<%= link_to "ARG.", arg_url %>
+					</li>
+					<li>
+						<%= link_to "Sentenças", sentencas_url %>
+					</li>
+					<li>
+						<%= link_to "Contato", new_contato_path %>
+					</li>
+					<li>
+						<%= link_to "Sobre", sobre_url %>
+					</li>
+					<li>
+						<%= link_to "Dic.", "#" %>
+					</li>					
+					<li>
+						<%= link_to "Admin", admin_crimes_path %>
+					</li>
+				</ul>
+			</div>
+			<!-- end #menu -->
+		</div>
+		<div id="footer">
+			<p>
+				crimes.herokuapp.com. Todos os direitos reservados. | Última Atualização: 29/04/2012 -
+				<a href="https://www.twitter.com/nailtongomes" target="_blank">@nailtongomes</a>
+			</p>
+		</div>
+		<%= javascript_include_tag "application" %>
+	</body>
+</html>

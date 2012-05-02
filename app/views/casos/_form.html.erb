@@ -1,0 +1,20 @@
+<br/>
+<%= form_for([@crime, @crime.casos.build]) do |f| %>  
+  <div class="field">
+    <%= f.text_field :autor, :size => "70", :placeholder => "Autor", :class => "autor" %><br/>
+    [ Você que está inserindo o caso ou quem te contou. ]
+  </div>
+  <div class="field">
+    <%= f.text_area :corpo, :cols => "69", :rows => "7", :placeholder => "Texto do caso", :class => "corpo" %><br/>
+    Admite-se tags HTML: &lt b &gt <b>Negrito</b> &lt /b &gt - &lt i &gt <i>Itálico</i> &lt /i &gt - &lt br /&gt Quebra de Linha
+  </div>
+  <div class="field">
+    <%= f.text_field :ref, :size => "70", :placeholder => "Referência", :class => "ref" %><br/>
+    [ Leu em algum lugar? Conte-nos onde. ]
+  </div>
+  <p>
+  	<hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "button"%> ou <%= link_to "Cancelar", @crime %>
+    [ O caso inserido ficará pedente de moderação. ]
+  </p>
+<% end %>

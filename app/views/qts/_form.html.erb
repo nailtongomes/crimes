@@ -1,0 +1,14 @@
+<br />
+<%= form_for([@crime, @crime.qts.build]) do |f| %>  
+  <div class="field">
+    <%= f.text_field :assertiva, :size => "65", :placeholder => "Asseriva", :class => "assertiva" %>
+    <%= f.select :resposta, options_for_select([["CERTO", "C"], ["ERRADO", "E"]]), :class => "resposta" %>
+  </div>
+  <div class="field">
+    
+  </div>
+  <p>
+  	<hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "button"%> ou <%= link_to "Cancelar", @crime %>
+  </p>
+<% end %>

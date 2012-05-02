@@ -1,0 +1,25 @@
+<% if not @doutrinas.empty? %> <h3 style="text-align: center"><a>Doutrinas para <%= @crime.nome %></a></h3>
+<% @doutrinas.each do |doutrina| %>
+<h3 style="text-align: justify"><%= link_to doutrina.autor, [:edit, :admin, doutrina.crime, doutrina] %>
+	<% if not doutrina.ativo %>
+	[ Desativado ]
+	<% else %>
+	[ Ativado ]
+	<% end %>
+<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, doutrina.crime, doutrina], :confirm => 'Tem certeza?', :method => :delete %> </h3>
+<p style="text-align: justify">
+	<%= textilize doutrina.corpo %>
+</p>
+<p>
+	<b>Referência:</b>
+	<%= textilize doutrina.ref %>
+</p>
+<% end %>
+<% else %>
+<h3>Não foram cadastradas doutrinas...</h3>
+<p style="text-align: center">
+	<%= link_to "[ Voltar ]", [:admin, @crime] %>
+</p>
+<% end %>
+<hr class="thick" />
+<%= link_to "Inserir doutrina", new_admin_crime_doutrina_path, :class => "button" %>

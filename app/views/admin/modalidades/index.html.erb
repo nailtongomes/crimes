@@ -1,0 +1,22 @@
+<% if not @modalidades.empty? %>
+<% @modalidades.each do |modalidade| %>
+<h3 style="text-align: justify"><%= link_to modalidade.titulo, [:edit, :admin, modalidade.crime, modalidade] %>
+<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, modalidade.crime, modalidade], :confirm => 'Are you sure?', :method => :delete %> </h3>
+<p style="text-align: justify">
+	<b>Base Legal:</b> <%= textilize modalidade.b_legal %>
+</p>
+<p style="text-align: justify">
+	<b>Pena:</b> <%= modalidade.pena %>
+</p>
+<p style="text-align: justify">
+	<b>Anotações:</b> <%= textilize modalidade.anotacoes %>
+</p>
+<% end %>
+<% else %>
+<h3 style="text-align: center">Espécies não foram cadastradas...</h3>
+<p style="text-align: center">
+	<%= link_to "[ Voltar ]", [:admin, @crime] %>
+</p>
+<% end %>
+<hr class="thick" />
+<%= link_to "Inserir Espécie", new_admin_crime_modalidade_path, :class => "button" %>

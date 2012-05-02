@@ -1,0 +1,11 @@
+<%= form_for([:admin, @crime, @qt]) do |f| %>
+  <div class="field">
+    <%= f.text_field :assertiva, :size => "90", :placeholder => "Asseriva", :class => "assertiva" %>
+    <%= f.select :resposta, options_for_select([["CERTO", "C"], ["ERRADO", "E"]]), :class => "resposta" %>
+    <%= f.check_box :ativo, :class => "ativo" %> Ativo?
+  </div>
+  <div class="actions">
+  	<hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde..." %> ou <%= link_to "Cancelar", admin_crime_qts_path(@crime.id) %>
+  </div>
+<% end %>

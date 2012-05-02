@@ -1,0 +1,24 @@
+    <h2>Usuários</h2>
+
+    <ul class="list">
+      <% @usuarios.each do |usuario| %>
+        <%= content_tag_for :li, usuario, :class => cycle(:odd, :even) do %>
+          <%= link_to "#{usuario.nome_completo} (#{usuario.email})", [:admin, usuario] %>
+
+          <div class="right">
+            <% if not usuario.email == "admin@crimes.com" %>
+            <%= link_to_edit [:edit, :admin, usuario] %>            
+            <%= link_to_destroy [:admin, usuario] unless current_usuario == usuario %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <hr class="thick" />
+
+    <div class="bar">
+      <div class="right">
+        <%= link_to 'Novo usuário', new_admin_usuario_path, :class => "button" %>
+      </div>
+    </div>

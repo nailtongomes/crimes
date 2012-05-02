@@ -1,0 +1,10 @@
+<h2>Mensagens</h2>
+
+<div id="open-inquiries">
+  <%= render 'contatos', :contatos => @open, :title => "Pendentes"  %>
+</div>
+
+<div id="closed-inquiries">
+  <%= render 'contatos', :contatos => @closed, :title => "Resolvidas"  %>
+</div>
+

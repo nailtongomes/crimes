@@ -1,0 +1,30 @@
+<h2>Crimes</h2>
+<div class="bar">
+<div class="right">
+	<%= link_to_new Crime, new_admin_crime_path, :class => "button" %>
+</div>
+</div>
+<hr class="thick" />
+<% if @crimes.present? %>
+<ul class="list">
+  <% @crimes.each do |crime| %>
+    <%= content_tag_for :li, crime, :class => cycle(:odd, :even) do %>
+        <%= link_to crime.nome, [:edit, :admin, crime]%>
+    
+      <div class="right">
+        <%= link_to_destroy [:admin, crime] %>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
+<% else %>
+  <p><%=t "empty", :collection => "crimes" %></p>
+<% end %>
+
+<hr class="thick" />
+
+<div class="bar">
+  <div class="right">
+    <%= link_to_new Crime, new_admin_crime_path, :class => "button" %>
+  </div>
+</div>

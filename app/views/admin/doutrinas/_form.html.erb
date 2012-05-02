@@ -1,0 +1,15 @@
+<%= form_for([:admin, @crime, @doutrina]) do |f| %>
+  <div class="field">
+    <%= f.text_field :autor, :size => "100", :placeholder => "Autor", :class => "autor" %> <%= f.check_box :ativo, :class => "ativo" %> Ativo?
+  </div>
+  <div class="field">
+    <%= f.text_area :corpo, :cols => "69", :rows => "7", :placeholder => "Corpo", :class => "corpo" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :ref, :size => "100", :placeholder => "Referência", :class => "ref" %>
+  </div>
+  <div class="actions">
+      	<hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde..." %> ou <%= link_to "Cancelar", admin_crime_doutrinas_path(@crime.id) %>
+  </div>
+<% end %>

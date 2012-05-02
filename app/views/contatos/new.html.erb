@@ -1,0 +1,20 @@
+﻿<% content_for :sidebar do %>
+	<%= image_tag("cont.jpg", :size => "250x200") %>
+<% end %>
+
+<%= form_for @contato do |f| %>
+  <%= error_messages_for @contato %>
+
+  <div class="field">
+    [Assunto] <%= f.select :assunto, options_for_subject %>
+  </div>
+
+  <div class="field">
+    [Nome] <%= f.text_field :nome, :placeholder => "Seu nome" %> [E-Mail] <%= f.text_field :email, :placeholder => "Seu E-mail" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :msg, :cols => "69", :rows => "7", :placeholder => "Campo para informações..." %>
+  </div>
+  <p><%= f.submit  "Enviar", :disable_with => "Aguarde...", :class => "button" %> ou <%= link_to "Cancelar", new_contato_path %> </p>
+<% end %>

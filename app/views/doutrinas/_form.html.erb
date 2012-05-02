@@ -1,0 +1,34 @@
+<br/>
+<%= form_for([@crime, @crime.doutrinas.build]) do |f| %>  
+  <div class="field">
+    <%= f.text_field :autor, :size => "70", :placeholder => "Autor", :class => "ref" %><br />
+    [ Qual o doutrinador? ]
+  </div>
+  <div class="field">
+    <%= f.text_area :corpo, :cols => "69", :rows => "10", :placeholder => "Texto da doutrina", 
+    :value => %{<p style="text-align: justify">
+    			\n<b>Conceito:</b>
+    			\n<b>Bem Jurídico:</b>
+    			\n<b>Objeto Material:</b>
+    			\n<b>Núcleo do Tipo:</b> 
+    			\n<b>Bem jurídico tutelado:</b> 
+    			\n<b>Objeto Material:</b> 
+    			\n<b>Sujeito Ativo:</b> 
+    			\n<b>Sujeito Passivo:</b> 
+    			\n<b>Elemento Subjetivo do Tipo:</b> 
+    			\n<b>Elemento Subjetivo Específico:</b> 
+    			\n<b>Consumação:</b> 
+    			\n<b>Admite tentativa?</b> 
+    			\n<b>Classificação:</b> </p>}, :class => "corpo" %><br />
+    Admite-se tags HTML: &lt b &gt <b>Negrito</b> &lt /b &gt - &lt i &gt <i>Itálico</i> &lt /i &gt - &lt br /&gt Quebra de Linha
+  </div>
+  <div class="field">
+    <%= f.text_field :ref, :size => "70", :placeholder => "Referência", :class => "ref" %> <br />
+    [ SOBRENOME, PRENOME abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, ano de publicação da obra. Nº de páginas ou volume. (Coleção ou série) ]
+  </div>
+  <p>
+    <hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "button"%> ou <%= link_to "Cancelar", @crime %><br />
+    [ A doutrina inserida ficará pedente de moderação. ]
+  </p>
+<% end %>

@@ -1,0 +1,26 @@
+<%= form_for [:admin, @crime] do |f| %>
+<%= error_messages_for @crime %>
+<div class="field">
+	<%= f.text_field :nome, :size => "70", :placeholder => "Nome ou Nomen Juris", :class => "nome"%>
+</div>
+<div class="field">
+	<%= f.text_area :capit, :cols => "69", :rows => "4", :placeholder => "Capitulação: Art. e Preceito Primário", :class => "capit" %>
+</div>
+<div class="field">
+	<%= f.text_field :pena, :size => "70", :placeholder => "Pena base", :class => "pena"%>
+</div>
+<div class="field">
+	<%= f.text_field :acao_penal, :size => "70", :placeholder => "Ação Penal", :class => "acao_penal" %>
+</div>
+<div class="field">
+	<%= f.text_field :competencia, :size => "70", :placeholder => "Competência", :class => "competencia" %>
+</div>
+
+<hr class="thick" />
+
+<p>
+	<%= f.submit :disable_with => "Aguarde...", :class => "button" %>
+	ou
+	<%= link_to "Cancelar", admin_crimes_path %>
+</p>
+<% end %>

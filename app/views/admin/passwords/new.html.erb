@@ -1,0 +1,17 @@
+<h2>Esqueceu da senha?</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+<%= devise_error_messages! %>
+
+<p>
+	<%= f.text_field :email, :placeholder => "E-Mail" %>
+</p>
+
+<hr class="thick" />
+
+<p>
+	<%= f.submit "Enviar instruções", :class => "button" %>
+	ou <%= link_to "Cancelar", new_usuario_session_path %>
+</p>
+
+<% end %>

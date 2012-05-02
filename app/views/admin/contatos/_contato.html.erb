@@ -1,0 +1,11 @@
+<%= content_tag_for :tr, contato, :class => row_class(contato) do %>
+  <td><%= truncate(contato.nome) %></td>
+  <td><%= contato.assunto %></td>
+  <td style="width:400px;"><%= truncate(contato.msg, :length => 50) %></td>
+
+  <td style="width: 180px; text-align:center;">
+    <%= link_to "Ver", [:admin, contato], :class => "button" %>
+    <%= toggle_open contato %>
+    <%= link_to "Remover", [:admin, contato], :confirm => t("confirm"), :method => :delete, :class => "button" %>
+  </td>
+<% end %>

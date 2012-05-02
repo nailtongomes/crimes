@@ -1,0 +1,21 @@
+<br />
+<%= form_for([@crime, @crime.juris.build]) do |f| %>  
+  <div class="field">
+    <%= f.text_field :orgao, :size => "70", :placeholder => "Orgão", :class => "orgao" %><br/>
+    [ STF - STJ - TJ ]
+  </div>
+  <div class="field">
+    <%= f.text_area :corpo, :cols => "69", :rows => "7", :placeholder => "Texto da Jurisprudência", :class => "corpo" %><br/>
+    Admite-se tags HTML: &lt b &gt <b>Negrito</b> &lt /b &gt - &lt i &gt <i>Itálico</i> &lt /i &gt - &lt br /&gt Quebra de Linha
+  </div>
+  
+  <div style="text-align: justify" class="field">
+    <%= f.text_field :ref, :size => "70", :placeholder => "Referência", :class => "ref" %><br/>
+    [ AUTOR (entidade coletiva responsável pelo documento). Nome da Corte ou Tribunal. Ementa (quando houver). Tipo e número do recurso (apelação, embargo, habeas-corpus, mandado de segurança, etc.). Partes litigantes. Nome do relator precedido da palavra "Relator". Data, precedida da palavra (acórdão ou decisão ou sentença) Dados da publicação que o publicou. Voto vencedor e vencido, quando houver. ]
+  </div>
+  <p>
+    <hr class="thick" />
+    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "button"%> ou <%= link_to "Cancelar", @crime %><br />
+    [ A jurisprudência inserida ficará pedente de moderação. ]
+  </p>
+<% end %>

@@ -1,0 +1,22 @@
+<h2> Mensagem: </h2>
+
+<p>
+  <b>De:</b>
+  <%= @contato.nome %> <span class="hint">(<%= @contato.email %>)</span>
+</p>
+
+<p>
+  <b>Assunto:</b> <%= @contato.assunto %>
+</p>
+
+<p>
+  <%= simple_format @contato.msg %>
+</p>
+
+<hr class="thick"/>
+
+<p>
+  <%= mail_to @contato.email, "Responder", class: "button" %>
+  or <%= link_to 'Voltar', admin_contatos_path %>
+</p>
+

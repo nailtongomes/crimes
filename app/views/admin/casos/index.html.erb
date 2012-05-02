@@ -1,0 +1,25 @@
+<% if not @casos.empty? %> <h3 style="text-align: center"><a>Casos para <%= @crime.nome %></a></h3>
+<% @casos.each do |caso| %>
+<h3 style="text-align: justify"><%= link_to caso.autor, [:edit, :admin, caso.crime, caso] %>
+	<% if not caso.ativo %>
+	[ Desativado ]
+	<% else %>
+	[ Ativado ]
+	<% end %>
+<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, caso.crime, caso], :confirm => 'Tem certeza?', :method => :delete %> </h3>
+<p style="text-align: justify">
+	<%= textilize caso.corpo %>
+</p>
+<p>
+	<b>Referência:</b>
+	<%= caso.ref %>
+</p>
+<% end %>
+<% else %>
+<h3>Não foram cadastrados casos...</h3>
+<p style="text-align: center">
+	<%= link_to "[ Voltar ]", [:admin, @crime] %>
+</p>
+<% end %>
+<hr class="thick" />
+<%= link_to "Inserir Caso", new_admin_crime_caso_path, :class => "button" %>
