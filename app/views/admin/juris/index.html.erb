@@ -1,4 +1,4 @@
-<% if not @juris.empty? %> <h3 style="text-align: center"><a>juris para <%= @crime.nome %></a></h3>
+<% if not @juris.empty? %> <h3 style="text-align: center"><a>Jurisprudências para <%= @crime.nome %></a></h3>
 <% @juris.each do |juri| %>
 <h3 style="text-align: justify"><%= link_to juri.orgao, [:edit, :admin, juri.crime, juri] %>
 	<% if not juri.ativo %>

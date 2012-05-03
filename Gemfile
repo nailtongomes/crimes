@@ -9,7 +9,7 @@ gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
-  
+  gem 'annotate', '~> 2.4.1.beta'  
 end
 
 group :assets do

@@ -6,7 +6,7 @@
 	[ Ativado ]
 	<% end %>
 <p style="text-align: justify">
-	<%= link_to textilize qt.assertiva, [:edit, :admin, qt.crime, qt] %>
+	<%= link_to qt.assertiva.capitalize, [:edit, :admin, qt.crime, qt] %>
 	<%= link_to image_tag("remov.png", :size => "16x16"), [:admin, qt.crime, qt], :confirm => 'Tem certeza?', :method => :delete %> </h3>
 </p>
 <p>

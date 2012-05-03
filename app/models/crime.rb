@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: crimes
+#
+#  id          :integer         not null, primary key
+#  nome        :string(255)
+#  capit       :text
+#  pena        :string(255)
+#  acao_penal  :string(255)
+#  competencia :string(255)
+#  fonte       :string(255)     default("CPB - DECRETO-LEI No 2.848, DE 7 DE DEZEMBRO DE 1940.")
+#  created_at  :datetime        not null
+#  updated_at  :datetime        not null
+#
+
 class Crime < ActiveRecord::Base
   has_many :modalidades, :dependent => :destroy
   has_many :casos, :dependent => :destroy
