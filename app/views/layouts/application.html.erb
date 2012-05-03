@@ -6,8 +6,22 @@
 		<%= stylesheet_link_tag "crimes.css" %>
 		<%= csrf_meta_tag %>
 		<meta name="author" content="Nailton Gomes">
-	  	<meta name="description" content="Crimes do Direito Penal Brasileiro">
-	  	<meta name="keywords" content="crimes, catalogo, direito, penal, doutrinas, jurisprudencias, questoes, casos">
+		<meta name="description" content="Crimes do Direito Penal Brasileiro">
+		<meta name="keywords" content="crimes, catalogo, direito, penal, doutrinas, jurisprudencias, questoes, casos">
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-21817757-3']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 	</head>
 	<body>
 		<div id="menu-wrapper">
@@ -32,7 +46,7 @@
 						<div id="content">
 							<div class="post">
 								<div>
-									<%= flash_messages %>									
+									<%= flash_messages %>
 									<%= yield %>
 								</div>
 							</div>
