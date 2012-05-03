@@ -6,5 +6,7 @@ class HomeController < ApplicationController
   def arg
   end
   def sentencas
+  end
+  def dic
   end  
 end

@@ -15,139 +15,263 @@ Usuario.create!(
   :password => "123456",
   :password_confirmation => "123456"
 )
+
+Usuario.create!(
+  :nome => "José",
+  :sobrenome => "Eduardo",
+  :email => "joseeduardomoura@farn.br", 
+  :password => "123456",
+  :password_confirmation => "123456"
+)
+
+Usuario.create!(
+  :nome => "Joseane",
+  :sobrenome => "Pinheiro",
+  :email => "joseanepinheiro@gmail.com", 
+  :password => "123456",
+  :password_confirmation => "123456"
+)
+
 #1
 Crime.create!(
-  :nome => "Homicídio",
-  :capit => "Art. 121 - Matar alguém",
-  :acao_penal => "Pública Incondicionada",
-  :competencia => "Tribunal do Júri/Justiça Estaudal, conforme o caso.",  
-  :pena => "Reclusão, de seis a vinte anos."    
+    :nome => "Homicídio",
+    :capit => "Art. 121 - Matar alguém",
+    :acao_penal => "Pública Incondicionada",
+    :competencia => "Tribunal do Júri/Justiça Estaudal, conforme o caso.",  
+    :pena => "Reclusão, de seis a vinte anos."    
 )
-
-Doutrina.create!(
-  :autor => "Cleber Masson",
-  :corpo => %{
-<p style="text-align: justify">
-\n<b>Conceito: </b>É a supressão da vida humana extrauterina praticada por outra pessoa. 
-\n<b>Bem Jurídico/Objetividade Jurídica </b>Vida humana exterior ao útero materno.
-\n<b>Objeto Material: </b> É o ser humano que suporta a conduta criminosa.
-\n<b>Núcleo do Tipo: </b>Matar
-\n<b>Sujeito Ativo: </b>praticado por qualquer pessoa (crime comum).
-\n<b>Sujeito Passivo: </b>Qualquer pessoa, desde que já nascida e viva.
-\n<b>Elemento Sujetivo: </b>Dolo, direto ou eventual. Há modalidade culposa.
-\n<b>Consumação: </b>Crime Material: cessação da atividade encefálica.
-\n<b>Tentativa: </b>É possível.
-\n<b>Classificação: </b>Crime simples; comum; material; de dano; de forma livre; comissivo ou omissivo; instantâneo; unissubjetivo, unilateral ou de concurso eventual; em regra, plurissubsistente; e progressivo.</p> 
-},
-  :ref   => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.",
-  :ativo => true,  
-  :crime_id => "1"    
-)
-
-Qt.create!(
-  :assertiva => "a futilidade para qualificar o homicídio deve ser apreciada subjetivamente, ou seja, pela opinião do sujeito ativo.",
-  :resposta => "E",
-  :ativo => true,  
-  :crime_id => "1"    
-)
-
-Tema.create!(
-  :titulo => "Homicídio e infecção dolosa por HIV.",
-  :autor => "Pendente...",
-  :corpo => "Pendente...",
-  :ref => "Pendente...", 
-  :ativo => true,  
-  :crime_id => "1"    
-)
-
-Juri.create!(
-  :orgao => "STJ",
-  :corpo => %{
-<p style="text-align: justify">
-PROCESSUAL PENAL. HABEAS CORPUS. HOMICÍDIO CULPOSO. NEGLIGÊNCIA MÉDICA. CARACTERIZAÇÃO. EXAME DE CORPO DE DELITO. SUPRIMENTO. PROVA TESTEMUNHAL. POSSIBILIDADE.</p>
-\nI - Cingindo-se a controvérsia tão-somente à existência de conduta negligente por parte da profissional médica, de molde a restar caracterizado que a sua omissão contribuiu para a realização ou antecipação do evento morte, é suficiente, para comprovação da prática delituosa, as provas documental e testemunhal colhidas na instrução criminal, sendo prescindível a realização da perícia. Precedentes do STJ e STF. II - Hipótese em que a causa mortis  é incontroversa. Ordem denegada. 
-},
-  :ref => "HC 31.139/RS, Rel. Ministro FELIX FISCHER, QUINTA TURMA, julgado em 18/12/2003, DJ 09/02/2004, p. 198", 
-  :ativo => true,  
-  :crime_id => "1"    
-)
-
-Caso.create!(
-  :autor => "Pendente...",
-  :corpo => %{
-<p style="text-align: justify">
-Ereiviton apunhala com faca-peixeira Ascrogéno.  
-},
-  :ref => "...", 
-  :ativo => true,  
-  :crime_id => "1"    
-)
-
-Modalidade.create!(
-  :crime_id => "1",
-  :titulo => "Homicídio Privilegiado",
   
-  :b_legal => %{
-<p>§ 1º Se o agente comete o crime impelido por motivo de relevante valor social ou moral, ou sob o domínio de violenta emoção, logo em seguida a injusta provocação da vítima...</p> 
-},
-
-  :pena => "A pena poderá ser reduzida de um sexto a um terço.",
-   
-  :anotacoes => %{
-<p><b>Por motivo de relevante valor social:</b> diz respeito ao interesse de toda a coletividade.</p>
-<p><b>Por motivo de relevante valor moral:</b> interesses particulares do sujeito ativo.</p>
-<p><b>Domínio de violenta emoção, logo em seguida a injusta provocação da vítima:</b> é o homicídio emocional, decorrente de intenso choque emocional. A resposta deve ser imediata, sob pena de transmudação em vingança.</p>
-}
-)
-
-Modalidade.create!(
-  :crime_id => "1",
-  :titulo => "Homicídio Qualificado",
-  
-  :b_legal => %{
-<p>§ 2° Se o homicídio é cometido:</p> 
-<p>I - mediante paga ou promessa de recompensa, ou por outro motivo torpe;</p> 
-<p>II - por motivo futil;</p>
-<p>III - com emprego de veneno, fogo, explosivo, asfixia, tortura ou outro meio insidioso ou cruel, ou de que possa resultar perigo comum;</p>
-<p>IV - à traição, de emboscada, ou mediante dissimulação ou outro recurso que dificulte ou torne impossivel a defesa do ofendido;</p>
-<p>V - para assegurar a execução, a ocultação, a impunidade ou vantagem de outro crime.</p>
-},
-
-  :pena => "Reclusão, de doze a trinta anos.",
-   
-  :anotacoes => %{
-<p>Inciso I: Cirscunstância de caráter subjetiva. Vingança pode ou não configurar motivo torpe, dependerá do caso concreto.</p>
-<p>Inciso II: Cirscunstância de caráter subjetiva. Ausência de motivo não significa futilidade.</p>
-<p>Inciso III: Cirscunstância de caráter objetiva. Só é homicídio qualificado por tortura quando esta é a causa da morte, do contrário poderá haver concurso material de homicídio com o crime autônomo de tortura.</p>
-<p>Inciso IV: Cirscunstância de caráter objetiva. Necessário que a surpresa seja totalmente imprevisível.</p>
-<p>Inciso V: Cirscunstância de caráter Subjetiva.</p>
-}
-)
-
-Modalidade.create!(
-  :crime_id => "1",
-  :titulo => "Homicídio Culposo",
-  
-  :b_legal => %{
-<p>§ 3º Se o homicídio é culposo:</p> 
-},
-
-  :pena => "Detenção, de um a três anos.",
-   
-  :anotacoes => %{
-<p>A culpa decorre de negligência (ausência de precaução), imprudência (afoiteza), imperícia (falta de aptidão técnica).</p>
-<p>O agente não quer o resultado ilícito, sua finalidade inicial é lícita. Sequer assume o risco de produzi-lo.</p>
-}
-)
+    Doutrina.create!(
+      :autor => "Cleber Masson",
+      :corpo => %{
+    <b>Conceito: </b>É a supressão da vida humana extrauterina praticada por outra pessoa. 
+    \n<b>Bem Jurídico/Objetividade Jurídica </b>Vida humana exterior ao útero materno.
+    \n<b>Objeto Material: </b> É o ser humano que suporta a conduta criminosa.
+    \n<b>Núcleo do Tipo: </b>Matar
+    \n<b>Sujeito Ativo: </b>Qualquer pessoa (crime comum). Comporta coautoria e participação.
+    \n<b>Sujeito Passivo: </b>Qualquer pessoa, desde que já nascida e viva.
+    \n<b>Elemento Sujetivo: </b>Dolo, direto ou eventual. Há modalidade culposa.
+    \n<b>Consumação: </b>Crime Material: cessação da atividade encefálica.
+    \n<b>Tentativa: </b>É possível. Na tentativa branca ou incruenta a vítima não é atingida; na vermelha ou cruenta a vítima sofre ferimentos.
+    \n<b>Classificação: </b>Crime simples; comum; material; de dano; de forma livre; comissivo ou omissivo; instantâneo; unissubjetivo, unilateral ou de concurso eventual; em regra, plurissubsistente; e progressivo. 
+    },
+      :ref   => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.",
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Qt.create!(
+      :assertiva => "A futilidade para qualificar o homicídio deve ser apreciada subjetivamente, ou seja, pela opinião do sujeito ativo.",
+      :resposta => "E",
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Tema.create!(
+      :titulo => "Homicídio e infecção dolosa por HIV.",
+      :autor => "Cleber Masson",
+      :corpo => "Se um portador do vírus HIV, consciente da letalidade da moléstia, efetua intencionalmente com terceira pessoa ato libidinoso que transmite a doença ou injeta nela o vírus, através de seringa contaminada, matando-a, respoderá por homicídio doloso consumado. E, se a vítima não falecer, a ele deverá ser imputado o crime de homicídio tentado.",
+      :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009. p. 15.", 
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Juri.create!(
+      :orgao => "STJ",
+      :corpo => %{
+    PROCESSUAL PENAL. HABEAS CORPUS. HOMICÍDIO CULPOSO. NEGLIGÊNCIA MÉDICA. CARACTERIZAÇÃO. EXAME DE CORPO DE DELITO. SUPRIMENTO. PROVA TESTEMUNHAL. POSSIBILIDADE.
+    \nI - Cingindo-se a controvérsia tão-somente à existência de conduta negligente por parte da profissional médica, de molde a restar caracterizado que a sua omissão contribuiu para a realização ou antecipação do evento morte, é suficiente, para comprovação da prática delituosa, as provas documental e testemunhal colhidas na instrução criminal, sendo prescindível a realização da perícia. Precedentes do STJ e STF. II - Hipótese em que a causa mortis  é incontroversa. Ordem denegada. 
+    },
+      :ref => "HC 31.139/RS, Rel. Ministro FELIX FISCHER, QUINTA TURMA, julgado em 18/12/2003, DJ 09/02/2004, p. 198", 
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Caso.create!(
+      :autor => "STF",
+      :corpo => %{
+    Em tese, o único médico plantonista, procurado mais de uma vez durante o exercício de sua atividade profissional na unidade de saúde, cientificado da gravidade da doença apresentada pelo paciente que lhe é apresetando (com risco de vida), ao se recusar a atendê-lo, determinando o retorno para casa, sem ao menos ministrar qualquer atendimento ou tratamento, pode haver deixado de impedir a ocorrência da morte da vítima, sendo tal conduta omissiva penalmente relevante devido à sua condição de garante.  
+    },
+      :ref => "HC 92.304/SP. Rel. Min. Ellen Gracie, 2ª Turma, j. 05.08.2008.", 
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Caso.create!(
+      :autor => "Cleber Masson",
+      :corpo => %{
+    "A", ao chegar à sua casa, depara-se com sua filha chorando copiosamente. Pergunta-lhe o motivo da tristeza, vindo a saber que fora ela recentemente estuprada por "B". Pede então a "C", seu amigo, que mate o estuprador, no que é atendido. "A" responde por homicídio privilegiado (relevante valor moral), enquanto a "C" deve ser atribuído o crime homicídio, simples ou qualificado (dependerá do caso).  
+    },
+      :ref => "HC 92.304/SP. Rel. Min. Ellen Gracie, 2ª Turma, j. 05.08.2008.", 
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Caso.create!(
+      :autor => "Cleber Masson",
+      :corpo => %{    
+    É homicídio quando "A" induz "B", uma criança de tenra idade, a pular do alto de um edifício, argumentando que assim agindo poderia voar.  
+    },
+      :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.", 
+      :ativo => true,  
+      :crime_id => "1"    
+    )
+    
+    Modalidade.create!(
+      :crime_id => "1",
+      :titulo => "Homicídio Privilegiado",
+      
+      :b_legal => %{
+    § 1º Se o agente comete o crime impelido por motivo de relevante valor social ou moral, ou sob o domínio de violenta emoção, logo em seguida a injusta provocação da vítima... 
+    },
+    
+      :pena => "A pena poderá ser reduzida de um sexto a um terço.",
+       
+      :anotacoes => %{
+    <b>Por motivo de relevante valor social:</b> diz respeito ao interesse de toda a coletividade.
+    \n<b>Por motivo de relevante valor moral:</b> interesses particulares do sujeito ativo.
+    \n<b>Domínio de violenta emoção, logo em seguida a injusta provocação da vítima:</b> é o homicídio emocional, decorrente de intenso choque emocional. A resposta deve ser imediata, sob pena de transmudação em vingança.
+    }
+    )
+    
+    Modalidade.create!(
+      :crime_id => "1",
+      :titulo => "Homicídio Qualificado",
+      
+      :b_legal => %{
+    § 2° Se o homicídio é cometido: 
+    \nI - mediante paga ou promessa de recompensa, ou por outro motivo torpe; 
+    \nII - por motivo futil;
+    \nIII - com emprego de veneno, fogo, explosivo, asfixia, tortura ou outro meio insidioso ou cruel, ou de que possa resultar perigo comum;
+    \nIV - à traição, de emboscada, ou mediante dissimulação ou outro recurso que dificulte ou torne impossivel a defesa do ofendido;
+    \nV - para assegurar a execução, a ocultação, a impunidade ou vantagem de outro crime.
+    },
+    
+      :pena => "Reclusão, de doze a trinta anos.",
+       
+      :anotacoes => %{
+    Inciso I: Cirscunstância de caráter subjetiva. Vingança pode ou não configurar motivo torpe, dependerá do caso concreto.
+    \nInciso II: Cirscunstância de caráter subjetiva. Ausência de motivo não significa futilidade.
+    \nInciso III: Cirscunstância de caráter objetiva. Só é homicídio qualificado por tortura quando esta é a causa da morte, do contrário poderá haver concurso material de homicídio com o crime autônomo de tortura.
+    \nInciso IV: Cirscunstância de caráter objetiva. Necessário que a surpresa seja totalmente imprevisível.
+    \nInciso V: Cirscunstância de caráter Subjetiva.
+    }
+    )
+    
+    Modalidade.create!(
+      :crime_id => "1",
+      :titulo => "Homicídio Culposo",
+      
+      :b_legal => %{
+    § 3º Se o homicídio é culposo: 
+    },
+    
+      :pena => "Detenção, de um a três anos.",
+       
+      :anotacoes => %{
+    A culpa decorre de negligência (ausência de precaução), imprudência (afoiteza), imperícia (falta de aptidão técnica).
+    \nO agente não quer o resultado ilícito nem assume o risco de produzí-lo.
+    }
+    )
 
 Crime.create!(
   :nome => "Induzimento, instigação ou auxílio a suicídio",
   :capit => "Art. 122 - Induzir ou instigar alguém a suicidar-se ou prestar-lhe auxílio para que o faça.",
-  :acao_penal => "",
-  :competencia => "",
+  :acao_penal => "Pública Incondicionada",
+  :competencia => "Tribunal do Júri",
   :pena => "Reclusão, de dois a seis anos, se o suicídio se consuma; ou reclusão, de um a três anos, se da tentativa de suicídio resulta lesão corporal de natureza grave."  
 )
 
+    Doutrina.create!(
+      :autor => "Cleber Masson",
+      :corpo => %{
+    <b>Conceito: </b>Suicídio é a destruição deliberada da própria vida. É também chamado de autocídio ou autoquíria. 
+    \n<b>Bem Jurídico/Objetividade Jurídica </b>Tutela-se a vida humana.
+    \n<b>Objeto Material: </b> É o ser humano que suporta a conduta criminosa.
+    \n<b>Núcleo do Tipo: </b>Induzir, Instigar e/ou Auxiliar
+    \n<b>Sujeito Ativo: </b>Qualquer pessoa (crime comum).
+    \n<b>Sujeito Passivo: </b>Qualquer pessoa, desde que determinada e possua um mínimo de capacidade de resistência e de discernimento.
+    \n<b>Elemento Sujetivo: </b>Dolo, direto ou eventual. Não há modalidade culposa.
+    \n<b>Consumação: </b>Crime Material: cessação da atividade encefálica ou no mínimo a produção de lesão corporal de natureza grave.
+    \n<b>Tentativa: </b>Não é possível. Anota-se que se da tentativa resulta lesão corporal leve, o fato será atípico. 
+    \n<b>Classificação: </b>Crime comum; de dano; comissivo ou omissivo; material; condicionado; de forma livre; simples; instantâneo; unissubjetivo, unilateral ou de concurso eventual; e, em regra, plurissubsistente. 
+    },
+      :ref   => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.",
+      :ativo => true,  
+      :crime_id => "2"    
+    )
+      Tema.create!(
+    :titulo => "Pacto de Morte.",
+    :autor => "Cleber Masson",
+    :corpo => %{
+  a) se o sobrevivente praticou atos de execução da morte do outro, a ele será imputado o crime de homicídio;
+  \nb) se o sobrevivente somente auxiliou o outro a suicidar-se, responderá, pelo crime de participação em suicídio;
+  \nc) se ambos praticaram atos de execução, um contra o outro, e ambos sobreviveram, responderão os dois por tentativa de homicídio;
+  \nd) se um deles praticou atos de execução da morte de ambos, mas ambos sobreviveram, aquele responderá por tentativa de homicídio, e este por participação em suicídio, desde que o executor, em razão da tentativa, sofra lesão corporal de natureza grave.   
+  },
+    :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009. p. 57", 
+    :ativo => true,  
+    :crime_id => "2"    
+  )
+  
+  Tema.create!(
+    :titulo => "Roleta-russa e duelo americado.",
+    :autor => "Cleber Masson",
+    :corpo => %{  
+  Aos sobreviventes será imputado o crime de participação em suicídio.   
+  },
+    :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009. p. 57", 
+    :ativo => true,  
+    :crime_id => "2"    
+  )
+  
+  Caso.create!(
+    :autor => "Cleber Masson",
+    :corpo => %{  
+  "A" procura "B", perguntando-lhe como solucionar seus problemas financeiros, no que obtém como resposta: "Suicide-se e tudo estará resolvido".  
+  },
+    :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.", 
+    :ativo => true,  
+    :crime_id => "2"    
+  )
+  
+  Caso.create!(
+    :autor => "Cleber Masson",
+    :corpo => %{  
+  "A" diz à "B" que, em face de problemas conjugais, pretende suicidar-se. Este, por sua vez, incentiva aquele a agir assim.  
+  },
+    :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.", 
+    :ativo => true,  
+    :crime_id => "2"    
+  )
+  
+  Caso.create!(
+    :autor => "Cleber Masson",
+    :corpo => %{
+  Ciente de que "A" deseja suicidar-se, e querendo que isso se concretize, "B" lhe empresta uma arma de fogo municiada.  
+  },
+    :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.", 
+    :ativo => true,  
+    :crime_id => "2"    
+  )
+
+    Modalidade.create!(
+      :crime_id => "2",
+      :titulo => "Causa de aumento de pena",
+      
+      :b_legal => %{
+        I - se o crime é praticado por motivo egoístico;
+        \nII - se a vítima é menor ou tem diminuída, por qualquer causa, a capacidade de resistência.
+    },
+    
+      :pena => "A pena é duplicada.",
+       
+      :anotacoes => %{
+      <b>Motivo Egoístico:</b> Quando revelado que o sujeito ativo almejava algum proveito.
+      \n<b>Vítima menor:</b> Entre 14 e 18 anos.
+      \n<b>Vítima que, por qualquer causa, tem diminuída a capacidade de resistência:</b> essa menor resistência pode ser provocada por enfermidade física ou mental e por efeitos de entorpecentes (drogas lícitas ou ilítitas e álcool). 
+    }
+    )
 
 Crime.create!(
   :nome => "Infanticídio",
@@ -156,6 +280,8 @@ Crime.create!(
   :competencia => "",  
   :pena => "Detenção, de dois a seis anos."  
 )
+
+
 
 Crime.create!(
   :nome => "Aborto",

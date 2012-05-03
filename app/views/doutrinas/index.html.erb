@@ -1,4 +1,4 @@
-<% if not @doutrinas.empty? %> <h3 style="text-align: center"><a>Doutrinas para <%= @crime.nome %></a></h3>
+<% if not @doutrinas.empty? %> <h3 style="text-align: center">Doutrinas para [ <%= link_to @crime.nome, @crime %> ]</h3>
 <% @doutrinas.each do |doutrina| %>
 <p>
 	<b>Doutrinador:</b> <%= doutrina.autor.upcase %>

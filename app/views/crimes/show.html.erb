@@ -1,38 +1,56 @@
 <% content_for :sidebar do %>
 <ul>
-	<h2>Publicidade</h2>
+	<% if @crime.modalidades.count > 0 %>
+	<h2><%= link_to "ESPÉCIES (#{@crime.modalidades.count.to_s})", crime_modalidades_path(@crime.id), :title => "Ver espécies" %></h2>
 	<ul>
-		<li>
-			<p style="text-align: center">
-				<%= image_tag("publicadv.png", :size => "285x100") %>
-
-				<%= image_tag("publicliv.png", :size => "285x200") %>
-			</p>
-		</li>
+			<% @crime.modalidades.each do |modalidade| %>
+			<li>
+			<%= modalidade.titulo %>
+			</li>
+		<% end %>
 	</ul>
+	<% end %>	
+	<br />
+	<% if @crime.doutrinas.count > 0 %>
+	<h2><%= link_to "DOUTRINAS (#{@crime.doutrinas.count.to_s})", crime_doutrinas_path(@crime.id), :title => "Ver doutrinas" %></h2>
+	<ul>
+			<% @crime.doutrinas.each do |doutrina| %>
+			<li>
+			<%= doutrina.autor %>
+			</li>
+		<% end %>
+	</ul>
+	<% end %>	
 </ul>
 <% end %>
-
 <div class="entry">
 	<h3 style="text-align: center"><a><%= @crime.nome %></a></h3>
+	<hr class="thick" />
 	<p>
-		<b>Capitulação: </b><br/><em><%= @crime.capit %> </em>
+		<b>Capitulação: </b>
+		<br/>
+		<%= @crime.capit %>
 	</p>
 	<p>
-		<b>Pena: </b><br/><em><%= @crime.pena %> </em>
-	</p>	
-	<p>
-		<b>Ação Penal: </b><br/><em><%= @crime.acao_penal %> </em>
+		<b>Pena: </b>
+		<br/>
+		<%= @crime.pena %>
 	</p>
 	<p>
-		<b>Competência: </b><br/><em><%= @crime.competencia %> </em>
+		<b>Ação Penal: </b>
+		<br/>
+		<%= @crime.acao_penal %>
 	</p>
-	<p class="links" style="text-align: center">
-		<%= link_to "ESPÉCIES(#{@crime.modalidades.count.to_s})", crime_modalidades_path(@crime.id), :class =>"button" %> 
-		<%= link_to "DOUTRINAS(#{@crime.doutrinas.count.to_s})", crime_doutrinas_path(@crime.id), :class =>"button" %>
-		<%= link_to "JURISPRUDÊNCIAS(#{@crime.juris.count.to_s})", crime_juris_path(@crime.id), :class =>"button" %>
-		<%= link_to "CASOS(#{@crime.casos.count.to_s})", crime_casos_path(@crime.id), :class =>"button" %>
-		<%= link_to "TEMAS(#{@crime.temas.count.to_s})", crime_temas_path(@crime.id), :class =>"button" %> 
-		<%= link_to "QUESTÕES(#{@crime.qts.count.to_s})", crime_qts_path(@crime.id), :class =>"button" %>
+	<p>
+		<b>Competência: </b>
+		<br/>
+		<%= @crime.competencia %>
+	</p>
+	<hr class="thick" />
+	<p class="links" style="text-align: center">		
+		<%= link_to "JURISPRUDÊNCIAS(#{@crime.juris.count.to_s})", crime_juris_path(@crime.id), :class =>"button", :title => "Ver Jurisprudências" %>
+		<%= link_to "TEMAS(#{@crime.temas.count.to_s})", crime_temas_path(@crime.id), :class =>"button", :title => "Ver Temas" %>		
+		<%= link_to "CASOS(#{@crime.casos.count.to_s})", crime_casos_path(@crime.id), :class =>"button", :title => "Ver Casos" %>
+		<%= link_to "QUESTÕES(#{@crime.qts.count.to_s})", crime_qts_path(@crime.id), :class =>"button", :title => "Ver Questões" %>
 	</p>
 </div>

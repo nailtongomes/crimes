@@ -1,5 +1,5 @@
 <% if not @temas.empty? %>
-			<h3 style="text-align: center"><a>Temas para <%= @crime.nome %></a></h3>
+			<h3 style="text-align: center">Temas para [ <%= link_to @crime.nome, @crime %> ]</h3>
 			<% @temas.each do |tema| %>
 			<p>
 			<b>Título:</b>
@@ -14,7 +14,7 @@
 			</p>
 			<p>
 			<b>Referência:</b>
-			<%= tema.ref %>
+			<%= textilize tema.ref %>
 			</p>
 			<hr class="thick" />
 			<% end %>

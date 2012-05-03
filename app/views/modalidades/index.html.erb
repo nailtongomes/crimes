@@ -5,7 +5,7 @@
 	<ul>
 		<% @modalidades.each do |modalidade| %>
 		<li>
-			<a href="#<%= modalidade.titulo %>"><%= modalidade.titulo %></a>
+			<a href="#<%= modalidade.titulo %>" title="Clique para achar"><%= modalidade.titulo %></a>
 		</li>
 		<% end %>
 	</ul>
@@ -15,13 +15,13 @@
 <% @modalidades.each do |modalidade| %>
 <h3 style="text-align: justify"> <a name="<%= modalidade.titulo %>"><%= modalidade.titulo %></a></h3>
 <p style="text-align: justify">
-	<b>Base Legal:</b> <%= textilize modalidade.b_legal %>
+	<b>Base Legal:</b> <br/> <%= textilize modalidade.b_legal %>
 </p>
 <p style="text-align: justify">
 	<b>Pena:</b> <%= modalidade.pena %>
 </p>
 <p style="text-align: justify">
-	<b>Anotações:</b> <%= textilize modalidade.anotacoes %>
+	<b>Anotações:</b> <br/> <%= textilize modalidade.anotacoes %>
 </p>
 <% end %>
 <% else %>

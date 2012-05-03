@@ -34,6 +34,12 @@ p, ul, ol {
   line-height: 180%;
 }
 
+p
+{
+	margin:1em 0;
+	text-align: justify;
+}
+
 ul, ol {
 }
 
@@ -179,7 +185,6 @@ a:hover {
   line-height: 55px;
   padding: 0px 30px;
   text-decoration: none;
-  text-align: center;
   text-transform: uppercase;
   font-family: 'Arvo', serif;
   font-size: 14px;
@@ -214,7 +219,6 @@ a:hover {
 
 .post {
   margin-bottom: 15px;
-  border-bottom: 1px dashed #D8D8D8;
 }
 
 .post-bgtop {
@@ -448,3 +452,7 @@ textarea { width: 98%; }
 }
 
 .button:active { top: 1px; }
+
+hr.point {
+	border-bottom: 1px dashed #D8D8D8;  
+}

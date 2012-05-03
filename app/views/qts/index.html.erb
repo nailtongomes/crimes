@@ -1,5 +1,5 @@
 <% if not @qts.empty? %>
-			<h3 style="text-align: center"><a>Questões para <%= @crime.nome %></a></h3>
+			<h3 style="text-align: center">Questões para [ <%= link_to @crime.nome, @crime %> ]</h3>
 			<% @qts.each do |qt| %>
 			<p style="text-align: justify">
 			<%= textilize qt.assertiva.capitalize %>

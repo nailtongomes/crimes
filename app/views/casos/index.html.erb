@@ -1,5 +1,5 @@
 <% if not @casos.empty? %>
-			<h3 style="text-align: center"><a>Casos para <%= @crime.nome %></a></h3>
+			<h3 style="text-align: center">Casos para [ <%= link_to @crime.nome, @crime %> ]</h3>
 			<% @casos.each do |caso| %>
 			<p>
 			<b>Autor:</b>
@@ -10,7 +10,7 @@
 			</p>
 			<p>
 			<b>Referência:</b>
-			<%= caso.ref %>
+			<%= textilize caso.ref %>
 			</p>
 			<hr class="thick" />
 			<% end %>

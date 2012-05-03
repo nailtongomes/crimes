@@ -1,7 +1,7 @@
 <% content_for :sidebar do %>
 <ul>
 	<li>
-		<h2>Pesquise:</h2>
+		<h2 style="text-align: center"> [ Pesquise ]</h2>
 		<div id="search" >
 			<%= form_tag crimes_path, :method => :get do %>
 			<%= text_field_tag :search, "",
@@ -21,26 +21,30 @@
 </ul>
 <% end %>
 <p>
-	<h2>Listando Crimes (<%= @crimes.count %>)</h2>
+	<h2 style="text-align: center"> [ <a>Listando <%= @crimes.count %> Crimes</a> ]</h2>
 </p>
 <br/>
 <% @crimes.each do |crime| %>
 <hr class="thick" />
 <div class="entry">
-	<h3 style="text-align: center"><em><%= link_to crime.nome, crime %></em></h3>
+	<h3 style="text-align: center"><%= link_to crime.nome, crime, :title => "Clique para abrir o crime" %> 
+		<% if crime.modalidades.count > 0 %>
+		| <%= link_to "ESPÉCIES (#{crime.modalidades.count.to_s})", crime_modalidades_path(crime.id), :title => "Ver as espécies do crime" %>
+		<% end %>
+		</h3>
+		<hr class="point" />
 	<p class="valor">
-		<b>Capitulação: </b><br/><em><%= crime.capit %> </em>
+		<b>Capitulação: </b><br/><%= crime.capit %>
 	</p>
 	<p class="valor">
-		<b>Pena: </b><br/><em><%= crime.pena %> </em>
+		<b>Pena: </b><br/><%= crime.pena %>
 	</p>	
-	<p class="links" style="text-align: center">
-		<%= link_to "ESPÉCIES(#{crime.modalidades.count.to_s})", crime_modalidades_path(crime.id), :class =>"button" %> 
-		<%= link_to "DOUTRINAS(#{crime.doutrinas.count.to_s})", crime_doutrinas_path(crime.id), :class =>"button" %>
-		<%= link_to "JURISPRUDÊNCIAS(#{crime.juris.count.to_s})", crime_juris_path(crime.id), :class =>"button" %>
-		<%= link_to "CASOS(#{crime.casos.count.to_s})", crime_casos_path(crime.id), :class =>"button" %>
-		<%= link_to "TEMAS(#{crime.temas.count.to_s})", crime_temas_path(crime.id), :class =>"button" %> 
-		<%= link_to "QUESTÕES(#{crime.qts.count.to_s})", crime_qts_path(crime.id), :class =>"button" %>
+	<p class="links" style="text-align: center">		 
+		<%= link_to "DOUTRINAS(#{crime.doutrinas.count.to_s})", crime_doutrinas_path(crime.id), :class =>"button", :title => "Ver Doutrinas" %>
+		<%= link_to "JURISPRUDÊNCIAS(#{crime.juris.count.to_s})", crime_juris_path(crime.id), :class =>"button", :title => "Ver Jurisprudências" %>
+		<%= link_to "TEMAS(#{crime.temas.count.to_s})", crime_temas_path(crime.id), :class =>"button", :title => "Ver Temas" %>
+		<%= link_to "CASOS(#{crime.casos.count.to_s})", crime_casos_path(crime.id), :class =>"button", :title => "Ver Casos" %>		 
+		<%= link_to "QUESTÕES(#{crime.qts.count.to_s})", crime_qts_path(crime.id), :class =>"button", :title => "Ver Questões" %>
 	</p>
 </div>
 <% end %>
