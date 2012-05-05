@@ -1,25 +1,4 @@
-<% content_for :sidebar do %>
-<ul>
-	<li>
-		<h2 style="text-align: center"> [ Pesquise ]</h2>
-		<div id="search" >
-			<%= form_tag crimes_path, :method => :get do %>
-			<%= text_field_tag :search, "",
-			:placeholder => "Nomen Juris OU Capitulação",
-			:size => 50,
-			:type => "search",
-			:class => "search-text" %>
-			<% end %>
-			<p style="text-align: justify">
-				[ pesquise por nome do crime ou por palavra contida na capitulação do crime ]
-			</p>
-		</div>
-		<div style="clear: both;">
-			&nbsp;
-		</div>
-	</li>
-</ul>
-<% end %>
+<%= render "pesquisa" %>
 <p>
 	<h2 style="text-align: center"> [ <a>Listando <%= @crimes.count %> Crimes</a> ]</h2>
 </p>
@@ -27,29 +6,25 @@
 <% @crimes.each do |crime| %>
 <hr class="thick" />
 <div class="entry">
-	<h3 style="text-align: center"><%= link_to crime.nome, crime, :title => "Clique para abrir o crime" %> 
-		<% if crime.modalidades.count > 0 %>
-		| <%= link_to "ESPÉCIES (#{crime.modalidades.count.to_s})", crime_modalidades_path(crime.id), :title => "Ver as espécies do crime" %>
-		<% end %>
-		</h3>
-		<hr class="point" />
+	<h3 style="text-align: center"><%= link_to crime.nome, crime, :title => "Clique para abrir o crime" %>
+	<% if crime.modalidades.count > 0 %>
+	| <%= link_to "ESPÉCIES (#{crime.modalidades.count.to_s})", crime_modalidades_path(crime.id), :title => "Ver as espécies do crime" %>
+	<% end %> </h3>
+	<hr class="point" />
 	<p class="valor">
-		<b>Capitulação: </b><br/><%= crime.capit %>
+		<b>Capitulação: </b>
+		<%= crime.capit %>
 	</p>
 	<p class="valor">
-		<b>Pena: </b><br/><%= crime.pena %>
-	</p>	
-	<p class="links" style="text-align: center">		 
+		<b>Pena: </b>
+		<%= crime.pena %>
+	</p>
+	<p class="links" style="text-align: center">
 		<%= link_to "DOUTRINAS(#{crime.doutrinas.count.to_s})", crime_doutrinas_path(crime.id), :class =>"button", :title => "Ver Doutrinas" %>
 		<%= link_to "JURISPRUDÊNCIAS(#{crime.juris.count.to_s})", crime_juris_path(crime.id), :class =>"button", :title => "Ver Jurisprudências" %>
 		<%= link_to "TEMAS(#{crime.temas.count.to_s})", crime_temas_path(crime.id), :class =>"button", :title => "Ver Temas" %>
-		<%= link_to "CASOS(#{crime.casos.count.to_s})", crime_casos_path(crime.id), :class =>"button", :title => "Ver Casos" %>		 
+		<%= link_to "CASOS(#{crime.casos.count.to_s})", crime_casos_path(crime.id), :class =>"button", :title => "Ver Casos" %>
 		<%= link_to "QUESTÕES(#{crime.qts.count.to_s})", crime_qts_path(crime.id), :class =>"button", :title => "Ver Questões" %>
 	</p>
 </div>
-<% end %>
-<% if @crimes.count >= 2 %>
-<p style="text-align: right">
-	<%= link_to( image_tag("up.png", :size => "32x32"), "#", :title => "Subir") %>
-</p>
 <% end %>

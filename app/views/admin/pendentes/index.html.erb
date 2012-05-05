@@ -1,7 +1,7 @@
 <% if not @casos.empty? %> 
 <h3 style="text-align: center"><a>CASOS</h3>
 <% @casos.each do |caso| %>
-<h3 style="text-align: justify"><%= link_to caso.autor, [:edit, :admin, caso.crime, caso] %>
+<h3 style="text-align: justify"><%= link_to "#{caso.id}-#{caso.autor}", [:edit, :admin, caso.crime, caso] %>
 <% end %>
 <% else %>
 <h3>Não há <a>CASOS</a> pendentes</h3>
@@ -11,7 +11,7 @@
 <% if not @temas.empty? %> 
 <h3 style="text-align: center"><a>TEMAS</h3>
 <% @temas.each do |tema| %>
-<h3 style="text-align: justify"><%= link_to tema.autor, [:edit, :admin, tema.crime, tema] %>
+<h3 style="text-align: justify"><%= link_to "#{tema.id}-#{tema.autor}", [:edit, :admin, tema.crime, tema] %>
 <% end %>
 <% else %>
 <h3>Não há <a>TEMAS</a> pendentes</h3>
@@ -21,7 +21,7 @@
 <% if not @juris.empty? %> 
 <h3 style="text-align: center"><a>JURISPRUDÊNCIAS</h3>
 <% @juris.each do |juri| %>
-<h3 style="text-align: justify"><%= link_to juri.orgao, [:edit, :admin, juri.crime, juri] %>
+<h3 style="text-align: justify"><%= link_to "#{juri.id}-#{juri.orgao}", [:edit, :admin, juri.crime, juri] %>
 <% end %>
 <% else %>
 <h3>Não há <a>JURISPRUDÊNCIAS</a> pendentes</h3>
@@ -31,7 +31,7 @@
 <% if not @qts.empty? %> 
 <h3 style="text-align: center"><a>QUESTÕES</h3>
 <% @qts.each do |qt| %>
-<h3 style="text-align: justify"><%= link_to qt.assertiva, [:edit, :admin, qt.crime, qt] %>
+<h3 style="text-align: justify"><%= link_to "#{qt.id}-#{qt.assertiva}", [:edit, :admin, qt.crime, qt] %>
 <% end %>
 <% else %>
 <h3>Não há <a>QUESTÕES</a> pendentes</h3>
@@ -41,7 +41,7 @@
 <% if not @doutrinas.empty? %> 
 <h3 style="text-align: center"><a>DOUTRINAS</h3>
 <% @doutrinas.each do |doutrina| %>
-<h3 style="text-align: justify"><%= link_to doutrina.autor, [:edit, :admin, doutrina.crime, doutrina] %>
+<h3 style="text-align: justify"><%= link_to "#{doutrina.id}-#{doutrina.autor}", [:edit, :admin, doutrina.crime, doutrina] %>
 <% end %>
 <% else %>
 <h3>Não há <a>DOUTRINAS</a> pendentes</h3>

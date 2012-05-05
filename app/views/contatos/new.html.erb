@@ -16,5 +16,6 @@
   <div class="field">
     <%= f.text_area :msg, :cols => "69", :rows => "7", :placeholder => "Campo para informações..." %>
   </div>
+  <hr class="thick" />
   <p><%= f.submit  "Enviar", :disable_with => "Aguarde...", :class => "button" %> ou <%= link_to "Cancelar", new_contato_path %> </p>
 <% end %>

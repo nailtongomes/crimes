@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Crimes do Direito Penal Brasileiro</title>
 		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
 		<link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
 		<%= stylesheet_link_tag "crimes.css" %>
+		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tag %>
 		<meta name="author" content="Nailton Gomes">
 		<meta name="description" content="Crimes do Direito Penal Brasileiro">
@@ -70,6 +72,43 @@
 				<a href="https://www.twitter.com/nailtongomes" target="_blank">@nailtongomes</a>
 			</p>
 		</div>
-		<%= javascript_include_tag "application" %>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+
+				jQuery(function() {
+
+					var scrollDiv = document.createElement("div");
+
+					jQuery(scrollDiv).attr("id", "toTop").html("^ Subir").appendTo("body");
+
+					jQuery(window).scroll(function() {
+
+						if(jQuery(this).scrollTop() != 0) {
+
+							jQuery("#toTop").fadeIn();
+
+						} else {
+
+							jQuery("#toTop").fadeOut();
+
+						}
+
+					});
+
+					jQuery("#toTop").click(function() {
+
+						jQuery("body,html").animate({
+
+							scrollTop : 0
+
+						}, 800);
+
+					});
+
+				});
+
+			});
+
+		</script>
 	</body>
 </html>
