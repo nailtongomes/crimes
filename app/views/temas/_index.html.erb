@@ -1,0 +1,23 @@
+<% if not @temas.empty? %>
+			<% @temas.each do |tema| %>
+			<p>
+			<h3>
+			<%= tema.titulo %></h3>
+			</p>
+			<p style="text-align: justify">
+			<%= textilize tema.corpo %>
+			</p>
+			<p>
+			<b>Autor:</b>
+			<%= tema.autor %>
+			</p>
+			<p>
+			<b>Referência:</b>
+			<%= textilize tema.ref %>
+			</p>
+			<hr class="thick" />			
+			<% end %>
+			
+<% else %>
+	<h3>Não foram cadastrados temas...</h3>
+<% end %>

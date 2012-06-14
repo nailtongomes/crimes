@@ -16,31 +16,34 @@ Usuario.create!(
   :password_confirmation => "123456"
 )
 
-Usuario.create!(
-  :nome => "José",
-  :sobrenome => "Eduardo",
-  :email => "joseeduardomoura@farn.br", 
-  :password => "123456",
-  :password_confirmation => "123456"
-)
-
-Usuario.create!(
-  :nome => "Joseane",
-  :sobrenome => "Pinheiro",
-  :email => "joseanepinheiro@gmail.com", 
-  :password => "123456",
-  :password_confirmation => "123456"
-)
-
 #1
 Crime.create!(
     :nome => "Homicídio",
+    :base => %{Art 121. Matar alguem: 
+\nPena - reclusão, de seis a vinte anos.
+\nCaso de diminuição de pena 
+\n§ 1º Se o agente comete o crime impelido por motivo de relevante valor social ou moral, ou sob o domínio de violenta emoção, logo em seguida a injusta provocação da vítima, ou juiz pode reduzir a pena de um sexto a um terço. 
+\nHomicídio qualificado 
+\n§ 2° Se o homicídio é cometido: 
+\nI - mediante paga ou promessa de recompensa, ou por outro motivo torpe; 
+\nII - por motivo futil; 
+\nIII - com emprego de veneno, fogo, explosivo, asfixia, tortura ou outro meio insidioso ou cruel, ou de que possa resultar perigo comum; 
+\nIV - à traição, de emboscada, ou mediante dissimulação ou outro recurso que dificulte ou torne impossivel a defesa do ofendido; 
+\nV - para assegurar a execução, a ocultação, a impunidade ou vantagem de outro crime: 
+\nPena - reclusão, de doze a trinta anos. 
+\nHomicídio culposo 
+\n§ 3º Se o homicídio é culposo:
+\nPena - detenção, de um a três anos. 
+\nAumento de pena 
+\n§ 4o No homicídio culposo, a pena é aumentada de 1/3 (um terço), se o crime resulta de inobservância de regra técnica de profissão, arte ou ofício, ou se o agente deixa de prestar imediato socorro à vítima, não procura diminuir as conseqüências do seu ato, ou foge para evitar prisão em flagrante. Sendo doloso o homicídio, a pena é aumentada de 1/3 (um terço) se o crime é praticado contra pessoa menor de 14 (quatorze) ou maior de 60 (sessenta) anos. 
+\n§ 5º - Na hipótese de homicídio culposo, o juiz poderá deixar de aplicar a pena, se as conseqüências da infração atingirem o próprio agente de forma tão grave que a sanção penal se torne desnecessária.
+    },
     :capit => "Art. 121 - Matar alguém",
+    :pena => "Reclusão, de seis a vinte anos.",    
     :acao_penal => "Pública Incondicionada",
-    :competencia => "Tribunal do Júri/Justiça Estaudal, conforme o caso.",  
-    :pena => "Reclusão, de seis a vinte anos."    
+    :competencia => "Se doloso, Tribunal do Júri; se culposo, Justiça Estaudal."  
 )
-  
+
     Doutrina.create!(
       :autor => "Cleber Masson",
       :corpo => %{
@@ -54,7 +57,24 @@ Crime.create!(
     \n<b>Consumação: </b>Crime Material: cessação da atividade encefálica.
     \n<b>Tentativa: </b>É possível. Na tentativa branca ou incruenta a vítima não é atingida; na vermelha ou cruenta a vítima sofre ferimentos.
     \n<b>Classificação: </b>Crime simples; comum; material; de dano; de forma livre; comissivo ou omissivo; instantâneo; unissubjetivo, unilateral ou de concurso eventual; em regra, plurissubsistente; e progressivo. 
-    },
+<br/>
+<h2>Homicídio Privilegiado</h2>
+
+<b>Por motivo de relevante valor social:</b> diz respeito ao interesse de toda a coletividade.
+\n<b>Por motivo de relevante valor moral:</b> interesses particulares do sujeito ativo.
+\n<b>Domínio de violenta emoção, logo em seguida a injusta provocação da vítima:</b> é o homicídio emocional, decorrente de intenso choque emocional. A resposta deve ser imediata, sob pena de transmudação em vingança.
+
+<h2>Homicídio Qualificado</h2>
+Inciso I: Cirscunstância de caráter subjetiva. Vingança pode ou não configurar motivo torpe, dependerá do caso concreto.
+\nInciso II: Cirscunstância de caráter subjetiva. Ausência de motivo não significa futilidade.
+\nInciso III: Cirscunstância de caráter objetiva. Só é homicídio qualificado por tortura quando esta é a causa da morte, do contrário poderá haver concurso material de homicídio com o crime autônomo de tortura.
+\nInciso IV: Cirscunstância de caráter objetiva. Necessário que a surpresa seja totalmente imprevisível.
+\nInciso V: Cirscunstância de caráter Subjetiva.
+
+<h2>Homicídio Culposo</h2>
+A culpa decorre de negligência (ausência de precaução), imprudência (afoiteza), imperícia (falta de aptidão técnica).
+\nO agente não quer o resultado ilícito nem assume o risco de produzí-lo.
+},
       :ref   => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.",
       :ativo => true,  
       :crime_id => "1"    
@@ -75,7 +95,7 @@ Crime.create!(
       :ativo => true,  
       :crime_id => "1"    
     )
-    
+   
     Juri.create!(
       :orgao => "STJ",
       :corpo => %{
@@ -102,7 +122,7 @@ Crime.create!(
       :corpo => %{
     "A", ao chegar à sua casa, depara-se com sua filha chorando copiosamente. Pergunta-lhe o motivo da tristeza, vindo a saber que fora ela recentemente estuprada por "B". Pede então a "C", seu amigo, que mate o estuprador, no que é atendido. "A" responde por homicídio privilegiado (relevante valor moral), enquanto a "C" deve ser atribuído o crime homicídio, simples ou qualificado (dependerá do caso).  
     },
-      :ref => "HC 92.304/SP. Rel. Min. Ellen Gracie, 2ª Turma, j. 05.08.2008.", 
+      :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.", 
       :ativo => true,  
       :crime_id => "1"    
     )
@@ -115,66 +135,17 @@ Crime.create!(
       :ref => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.", 
       :ativo => true,  
       :crime_id => "1"    
-    )
-    
-    Modalidade.create!(
-      :crime_id => "1",
-      :titulo => "Homicídio Privilegiado",
-      
-      :b_legal => %{
-    § 1º Se o agente comete o crime impelido por motivo de relevante valor social ou moral, ou sob o domínio de violenta emoção, logo em seguida a injusta provocação da vítima... 
-    },
-    
-      :pena => "A pena poderá ser reduzida de um sexto a um terço.",
-       
-      :anotacoes => %{
-    <b>Por motivo de relevante valor social:</b> diz respeito ao interesse de toda a coletividade.
-    \n<b>Por motivo de relevante valor moral:</b> interesses particulares do sujeito ativo.
-    \n<b>Domínio de violenta emoção, logo em seguida a injusta provocação da vítima:</b> é o homicídio emocional, decorrente de intenso choque emocional. A resposta deve ser imediata, sob pena de transmudação em vingança.
-    }
-    )
-    
-    Modalidade.create!(
-      :crime_id => "1",
-      :titulo => "Homicídio Qualificado",
-      
-      :b_legal => %{
-    § 2° Se o homicídio é cometido: 
-    \nI - mediante paga ou promessa de recompensa, ou por outro motivo torpe; 
-    \nII - por motivo futil;
-    \nIII - com emprego de veneno, fogo, explosivo, asfixia, tortura ou outro meio insidioso ou cruel, ou de que possa resultar perigo comum;
-    \nIV - à traição, de emboscada, ou mediante dissimulação ou outro recurso que dificulte ou torne impossivel a defesa do ofendido;
-    \nV - para assegurar a execução, a ocultação, a impunidade ou vantagem de outro crime.
-    },
-    
-      :pena => "Reclusão, de doze a trinta anos.",
-       
-      :anotacoes => %{
-    Inciso I: Cirscunstância de caráter subjetiva. Vingança pode ou não configurar motivo torpe, dependerá do caso concreto.
-    \nInciso II: Cirscunstância de caráter subjetiva. Ausência de motivo não significa futilidade.
-    \nInciso III: Cirscunstância de caráter objetiva. Só é homicídio qualificado por tortura quando esta é a causa da morte, do contrário poderá haver concurso material de homicídio com o crime autônomo de tortura.
-    \nInciso IV: Cirscunstância de caráter objetiva. Necessário que a surpresa seja totalmente imprevisível.
-    \nInciso V: Cirscunstância de caráter Subjetiva.
-    }
-    )
-    
-    Modalidade.create!(
-      :crime_id => "1",
-      :titulo => "Homicídio Culposo",
-      
-      :b_legal => %{
-    § 3º Se o homicídio é culposo: 
-    },
-    
-      :pena => "Detenção, de um a três anos.",
-       
-      :anotacoes => %{
-    A culpa decorre de negligência (ausência de precaução), imprudência (afoiteza), imperícia (falta de aptidão técnica).
-    \nO agente não quer o resultado ilícito nem assume o risco de produzí-lo.
-    }
-    )
+    )  
 
+#2    
 Crime.create!(
+  :base => %{Art. 122 - Induzir ou instigar alguém a suicidar-se ou prestar-lhe auxílio para que o faça:
+\nPena - reclusão, de dois a seis anos, se o suicídio se consuma; ou reclusão, de um a três anos, se da tentativa de suicídio resulta lesão corporal de natureza grave. 
+\nParágrafo único - A pena é duplicada:
+\nAumento de pena
+\nI - se o crime é praticado por motivo egoístico; 
+\nII - se a vítima é menor ou tem diminuída, por qualquer causa, a capacidade de resistência.
+},
   :nome => "Induzimento, instigação ou auxílio a suicídio",
   :capit => "Art. 122 - Induzir ou instigar alguém a suicidar-se ou prestar-lhe auxílio para que o faça.",
   :acao_penal => "Pública Incondicionada",
@@ -195,6 +166,11 @@ Crime.create!(
     \n<b>Consumação: </b>Crime Material: cessação da atividade encefálica ou no mínimo a produção de lesão corporal de natureza grave.
     \n<b>Tentativa: </b>Não é possível. Anota-se que se da tentativa resulta lesão corporal leve, o fato será atípico. 
     \n<b>Classificação: </b>Crime comum; de dano; comissivo ou omissivo; material; condicionado; de forma livre; simples; instantâneo; unissubjetivo, unilateral ou de concurso eventual; e, em regra, plurissubsistente. 
+<br/>
+<h2>Causa de Aumento de Pena</h2>
+      <b>Motivo Egoístico:</b> Quando revelado que o sujeito ativo almejava algum proveito.
+      \n<b>Vítima menor:</b> Entre 14 e 18 anos.
+      \n<b>Vítima que, por qualquer causa, tem diminuída a capacidade de resistência:</b> essa menor resistência pode ser provocada por enfermidade física ou mental e por efeitos de entorpecentes (drogas lícitas ou ilítitas e álcool).
     },
       :ref   => "MASSON, Cleber Rogério. <b>Direito penal esquematizado</b>. 2 ed. São Paulo: Método, 2009.",
       :ativo => true,  
@@ -255,25 +231,12 @@ Crime.create!(
     :crime_id => "2"    
   )
 
-    Modalidade.create!(
-      :crime_id => "2",
-      :titulo => "Causa de aumento de pena",
-      
-      :b_legal => %{
-        I - se o crime é praticado por motivo egoístico;
-        \nII - se a vítima é menor ou tem diminuída, por qualquer causa, a capacidade de resistência.
-    },
-    
-      :pena => "A pena é duplicada.",
-       
-      :anotacoes => %{
-      <b>Motivo Egoístico:</b> Quando revelado que o sujeito ativo almejava algum proveito.
-      \n<b>Vítima menor:</b> Entre 14 e 18 anos.
-      \n<b>Vítima que, por qualquer causa, tem diminuída a capacidade de resistência:</b> essa menor resistência pode ser provocada por enfermidade física ou mental e por efeitos de entorpecentes (drogas lícitas ou ilítitas e álcool). 
-    }
-    )
-
+#3
 Crime.create!(
+:base => %{
+Art. 123 - Matar, sob a influência do estado puerperal, o próprio filho, durante o parto ou logo após:
+Pena - detenção, de dois a seis anos. 
+},
   :nome => "Infanticídio",
   :capit => "Art. 123 - Matar, sob a influência do estado puerperal, o próprio filho, durante o parto ou logo após.",
   :acao_penal => "",
@@ -281,214 +244,139 @@ Crime.create!(
   :pena => "Detenção, de dois a seis anos."  
 )
 
-
-
+#4
 Crime.create!(
-  :nome => "Aborto",
-  :capit => "Art. 124 - Provocar aborto em si mesma ou consentir que outrem lho provoque; Art. 125 - Provocar aborto, sem o consentimento da gestante; Art. 126 - Provocar aborto com o consentimento da gestante.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de um a três anos (124); Reclusão, de três a dez anos (125); Reclusão, de um a quatro anos (126)."  
-)
-
-Crime.create!(
+:base => %{
+Art. 129. Ofender a integridade corporal ou a saúde de outrem: 
+\nPena - detenção, de três meses a um ano.
+\nLesão corporal de natureza grave 
+\n§ 1º Se resulta: 
+\nI - Incapacidade para as ocupações habituais, por mais de trinta dias; 
+\nII - perigo de vida; 
+\nIII - debilidade permanente de membro, sentido ou função; 
+\nIV - aceleração de parto: 
+\nPena - reclusão, de um a cinco anos. 
+\n§ 2° Se resulta: 
+\nI - Incapacidade permanente para o trabalho; 
+\nII - enfermidade incuravel; 
+\nIII perda ou inutilização do membro, sentido ou função; 
+\nIV - deformidade permanente; 
+\nV - aborto: 
+\nPena - reclusão, de dois a oito anos. 
+\nLesão corporal seguida de morte 
+\n§ 3° Se resulta morte e as circunstâncias evidenciam que o agente não quís o resultado, nem assumiu o risco de produzí-lo: 
+\nPena - reclusão, de quatro a doze anos. 
+\nDiminuição de pena 
+\n§ 4° Se o agente comete o crime impelido por motivo de relevante valor social ou moral ou sob o domínio de violenta emoção, logo em seguida a injusta provocação da vítima, o juiz pode reduzir a pena de um sexto a um terço. 
+\nSubstituição da pena 
+\n§ 5° O juiz, não sendo graves as lesões, pode ainda substituir a pena de detenção pela de multa, de duzentos mil réis a dois contos de réis: 
+\nI - se ocorre qualquer das hipóteses do parágrafo anterior; 
+\nII - se as lesões são recíprocas. 
+\nLesão corporal culposa 
+\n§ 6° Se a lesão é culposa:
+\nPena - detenção, de dois meses a um ano. 
+\nAumento de pena 
+\n§ 7º - Aumenta-se a pena de um terço, se ocorrer qualquer das hipóteses do art. 121, § 4º. 
+\n§ 8º - Aplica-se à lesão culposa o disposto no § 5º do art. 121.
+\nViolência Doméstica 
+\n§ 9o Se a lesão for praticada contra ascendente, descendente, irmão, cônjuge ou companheiro, ou com quem conviva ou tenha convivido, ou, ainda, prevalecendo-se o agente das relações domésticas, de coabitação ou de hospitalidade:
+\nPena - detenção, de 3 (três) meses a 3 (três) anos. 
+\n§ 10. Nos casos previstos nos §§ 1o a 3o deste artigo, se as circunstâncias são as indicadas no § 9o deste artigo, aumenta-se a pena em 1/3 (um terço).
+\n§ 11. Na hipótese do § 9o deste artigo, a pena será aumentada de um terço se o crime for cometido contra pessoa portadora de deficiência.
+},
   :nome => "Lesão Corporal",
   :capit => "Art. 129 - Ofender a integridade corporal ou a saúde de outrem.",
-  :acao_penal => "",
-  :competencia => "",
+  :acao_penal => "Condicionada a representação para a modalidade simples e culposa; pública incondicionada para as demais.",
+  :competencia => "Juizado Especial Criminal (JECrim) para a modalidade simples e culposa; Justiça Estadual para as demais.",
   :pena => "Detenção, de três meses a um ano."  
 )
 
-Modalidade.create!(
-  :crime_id => "5",
-  :titulo => "Lesão corporal de natureza grave",
-  
-  :b_legal => %{
-<p>§1º  Se resulta:</p>
-<p>I – incapacidade para as ocupações habituais por mais de 30 dias;</p>
-<p>II – perigo de vida;</p>
-<p>III – debilidade permanente de membro, sentido ou função;</p>
-<p>IV – aceleração de parto.</p> 
+#5
+Crime.create!(
+  :base => %{
+Art. 146 - Constranger alguém, mediante violência ou grave ameaça, ou depois de \nlhe haver reduzido, por qualquer outro meio, a capacidade de resistência, a não \nfazer o que a lei permite, ou a fazer o que ela não manda:
+\nPena - detenção, de três meses a um ano, ou multa.
+\nAumento de pena
+\n§ 1º - As penas aplicam-se cumulativamente e em dobro, quando, para a execução do crime, se reúnem mais de três pessoas, ou há emprego de armas.
+\n§ 2º - Além das penas cominadas, aplicam-se as correspondentes à violência.
+\n§ 3º - Não se compreendem na disposição deste artigo:
+\nI - a intervenção médica ou cirúrgica, sem o consentimento do paciente ou de seu representante legal, se justificada por iminente perigo de vida;
+\nII - a coação exercida para impedir suicídio.
 },
-
-  :pena => "Reclusão, de um a cinco anos.",
-   
-  :anotacoes => %{
-<p>Inciso I - trata não apenas de ocupações laborais, mas também atividades costumeiras, rotineiras. O que deve incapacitar é a lesão, e não a vergonha da lesão.</p>
-<p>Inciso II - trata de inciso que só comporta modalidade culposa.</p>
-<p>Inciso III - debilidade significa enfraquecimento, diminuição da capacidade funcional.</p>
-<p>Inciso IV - o feto deve nascer com vida, senão será lesão gravíssima e deve ter o conhecimento da gravidez, senão será só lesão leve.</p>
-}
-)
-
-Modalidade.create!(
-  :crime_id => "5",
-  :titulo => "Lesão corporal de natureza gravíssima",
-  
-  :b_legal => %{
-<p>§2º Se resulta:</p>
-<p>I – incapacidade permanente para o trabalho;</p>
-<p>II – enfermidade incurável;</p>
-<p>III – perda ou inutilização de membro, sentido ou função;</p>
-<p>IV – deformidade permanente;</p>
-<p>V – aborto;</p> 
-},
-
-  :pena => "Reclusão, de dois a oito anos.",
-   
-  :anotacoes => %{
-<p>Inciso I - deve ser uma incapacidade genérica para o trabalho, não necessariamente apenas do trabalho exercido pela vítima..</p>
-<p>Inciso II - enfermidade incurável é uma doença ainda sem remédio pela medicina atual ou que envolva tratamento de intervenção cirúrgica arriscada ou tratamento incerto.</p>
-<p>Inciso III - perda é a ablação, via mutilação ou amputação. No caso de órgãos duplos, para consumar tem de perder ou inutilizar ambos.</p>
-<p>Inciso IV - trata-se de um dano estético de grave relevância e visível que causa vexame à vítima e repulsa a quem vê.</p>
-<p>Inciso V - trata de inciso que só comporta modalidade culposa.</p>
-}
-)
-
-Modalidade.create!(
-  :crime_id => "5",
-  :titulo => "Lesão corporal seguida de morte",
-  
-  :b_legal => %{
-<p>§3º Se resulta morte e as circunstâncias evidenciam que o agente não quis o resultado, nem assumiu o risco de produzi-lo:</p> 
-},
-
-  :pena => "Reclusão, de quatro a doze anos.",
-   
-  :anotacoes => %{
-<p>Trata-se de crime preterdoloso.</p>
-}
-)
-
-Crime.create!(
-  :nome => "Perigo de contágio venéreo",
-  :capit => "Art. 130 - Expor alguém, por meio de relações sexuais ou qualquer ato libidinoso, a contágio de moléstia venérea, de que sabe ou deve saber que está contaminado.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção de três meses a um ano e multa."  
-)
-
-Crime.create!(
-  :nome => "Perigo de contágio de moléstia grave",
-  :capit => "Art. 131 - Praticar, com o fim de transmitir a outrem moléstia grave de que está contaminado, ato capaz de produzir o contágio.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => ""  
-)
-
-Crime.create!(
-  :nome => "Abandono de incapaz",
-  :capit => "Art. 133 - Abandonar pessoa que está sob seu cuidado, guarda, vigilância ou autoridade, e, por qualquer motivo, incapaz de defender-se dos riscos resultantes do abandono.",
-  :acao_penal => "",
-  :competencia => "",  
-  :pena => "Detenção de seis meses a três anos."  
-)
-
-Crime.create!(
-  :nome => "Omissão de Socorro",
-  :capit => "Art. 135 - Deixar de prestar assistência, quando possível fazê-lo sem risco pessoal, à criança abandonada ou extraviada, ou à pessoa inválida ou ferida, ao desamparo ou em grave e iminente perigo; ou não pedir, nesses casos, socorro da autoridade pública.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção de um a seis meses ou multa."  
-)
-
-Crime.create!(
-  :nome => "Maus tratos",
-  :capit => "Art. 136 - Expor a perigo a vida ou a saúde de pessoa sob sua autoridade, guarda ou vigilância, para fim de educação, ensino, tratamento ou custódia, quer privando-a de alimentação ou cuidados indispensáveis, quer sujeitando-a a trabalho excessivo ou inadequado, quer abusando de meios de correção ou disciplina.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de dois meses a um ano, ou multa"  
-)
-
-Crime.create!(
-  :nome => "Rixa",
-  :capit => "Art. 137 - Participar de rixa, salvo para separar os contendores.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de quinze dias a dois meses, ou multa."  
-)
-
-Crime.create!(
-  :nome => "Calúnia",
-  :capit => "Art. 138 - Caluniar alguém, imputando-lhe falsamente fato definido como crime.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de seis meses a dois anos, e multa"  
-)
-
-Crime.create!(
-  :nome => "Difamação",
-  :capit => "Art. 139 - Difamar alguém, imputando-lhe fato ofensivo à sua reputação.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de três meses a um ano, e multa."  
-)
-
-Crime.create!(
-  :nome => "Injúria",
-  :capit => "Art. 140 - Injuriar alguém, ofendendo-lhe a dignidade ou o decoro.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão de um a três anos e multa."  
-)
-
-Crime.create!(
   :nome => "Constrangimento Ilegal",
   :capit => "Art. 146 - Constranger alguém, mediante violência ou grave ameaça, ou depois de lhe haver reduzido, por qualquer outro meio, a capacidade de resistência, a não fazer o que a lei permite, ou a fazer o que ela não manda.",
-  :acao_penal => "",
-  :competencia => "",
+  :acao_penal => "Pública Incondicionada",
+  :competencia => "Juizado Especial Criminal (JECrim)",
   :pena => "Detenção, de três meses a um ano, ou multa."  
 )
 
+#6
 Crime.create!(
+:base => %{
+Art. 147 - Ameaçar alguém, por palavra, escrito ou gesto, ou qualquer outro meio simbólico, de causar-lhe mal injusto e grave:
+\nPena - detenção, de um a seis meses, ou multa.
+\nParágrafo único - Somente se procede mediante representação.
+},
   :nome => "Ameaça",
   :capit => "Art. 147 - Ameaçar alguém, por palavra, escrito ou gesto, ou qualquer outro meio simbólico, de causar-lhe mal injusto e grave.",
-  :acao_penal => "",
-  :competencia => "",
+  :acao_penal => "Condicionada a representação",
+  :competencia => "Juizado Especial Criminal (JECrim)",
   :pena => "Detenção, de um a seis meses, ou multa"  
 )
 
+#7
 Crime.create!(
-  :nome => "Seqüestro e cárcere privado",
-  :capit => "Art. 148 - Privar alguém de sua liberdade, mediante seqüestro ou cárcere privado.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de um a três anos."  
-)
-
-Crime.create!(
-  :nome => "Redução a condição análoga à de escravo",
-  :capit => "Art. 149 - Reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos forçados ou a jornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer meio, sua locomoção em razão de dívida contraída com o empregador ou preposto.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a oito anos, e multa, além da pena correspondente à violência."  
-)
-
-Crime.create!(
-  :nome => "Violação de domicílio",
-  :capit => "Art. 150 - Entrar ou permanecer, clandestina ou astuciosamente, ou contra a vontade expressa ou tácita de quem de direito, em casa alheia ou em suas dependências.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de um a três meses, ou multa."  
-)
-
-Crime.create!(
+:base => %{
+\nArt. 155 - Subtrair, para si ou para outrem, coisa alheia móvel:
+\nPena - reclusão, de um a quatro anos, e multa.
+\n§ 1º - A pena aumenta-se de um terço, se o crime é praticado durante o repouso noturno.
+\n§ 2º - Se o criminoso é primário, e é de pequeno valor a coisa furtada, o juiz pode substituir a pena de reclusão pela de detenção, diminuí-la de um a dois terços, ou aplicar somente a pena de multa.
+\n§ 3º - Equipara-se à coisa móvel a energia elétrica ou qualquer outra que tenha valor econômico.
+\nFurto qualificado
+\n§ 4º - A pena é de reclusão de dois a oito anos, e multa, se o crime é cometido:
+\nI - com destruição ou rompimento de obstáculo à subtração da coisa;
+\nII - com abuso de confiança, ou mediante fraude, escalada ou destreza;
+\nIII - com emprego de chave falsa;
+\nIV - mediante concurso de duas ou mais pessoas.
+\n§ 5º - A pena é de reclusão de três a oito anos, se a subtração for de veículo automotor que venha a ser transportado para outro Estado ou para o exterior.
+},
   :nome => "Furto",
   :capit => "Art. 155 - Subtrair, para si ou para outrem, coisa alheia móvel.",
-  :acao_penal => "",
-  :competencia => "",
+  :acao_penal => "Pública Incondicionada",
+  :competencia => "Justiça Estadual",
   :pena => "Reclusão, de um a quatro anos, e multa."  
 )
 
+#8
 Crime.create!(
+:base => %{
+\nArt. 157 - Subtrair coisa móvel alheia, para si ou para outrem, mediante grave ameaça ou violência a pessoa, ou depois de havê-la, por qualquer meio, reduzido à impossibilidade de resistência:
+\nPena - reclusão, de quatro a dez anos, e multa.
+\n§ 1º - Na mesma pena incorre quem, logo depois de subtraída a coisa, emprega violência contra pessoa ou grave ameaça, a fim de assegurar a impunidade do crime ou a detenção da coisa para si ou para terceiro.
+\n§ 2º - A pena aumenta-se de um terço até metade:
+\nI - se a violência ou ameaça é exercida com emprego de arma;
+\nII - se há o concurso de duas ou mais pessoas;
+\nIII - se a vítima está em serviço de transporte de valores e o agente conhece tal circunstância.
+\nIV - se a subtração for de veículo automotor que venha a ser transportado para outro Estado ou para o exterior;
+\nV - se o agente mantém a vítima em seu poder, restringindo sua liberdade. 
+\n§ 3º Se da violência resulta lesão corporal grave, a pena é de reclusão, de sete a quinze anos, além da multa; se resulta morte, a reclusão é de vinte a trinta anos, sem prejuízo da multa. 
+},
   :nome => "Roubo",
   :capit => "Art. 157 - Subtrair coisa móvel alheia, para si ou para outrem, mediante grave ameaça ou violência a pessoa, ou depois de havê-la, por qualquer meio, reduzido à impossibilidade de resistência.",
-  :acao_penal => "",
-  :competencia => "",
+  :acao_penal => "Pública Incondicionada",
+  :competencia => "Justiça Estadual",
   :pena => "Reclusão, de quatro a dez anos, e multa."  
 )
 
+#9
 Crime.create!(
+:base => %{
+Art. 158 - Constranger alguém, mediante violência ou grave ameaça, e com o intuito de obter para si ou para outrem indevida vantagem econômica, a fazer, tolerar que se faça ou deixar fazer alguma coisa:
+\nPena - reclusão, de quatro a dez anos, e multa.
+\n§ 1º - Se o crime é cometido por duas ou mais pessoas, ou com emprego de arma, aumenta-se a pena de um terço até metade.
+\n§ 2º - Aplica-se à extorsão praticada mediante violência o disposto no § 3º do artigo anterior.
+\n§ 3o Se o crime é cometido mediante a restrição da liberdade da vítima, e essa condição é necessária para a obtenção da vantagem econômica, a pena é de reclusão, de 6 (seis) a 12 (doze) anos, além da multa; se resulta lesão corporal grave ou morte, aplicam-se as penas previstas no art. 159, §§ 2o e 3o, respectivamente.
+},
   :nome => "Extorsão",
   :capit => "Art. 158 - Constranger alguém, mediante violência ou grave ameaça, e com o intuito de obter para si ou para outrem indevida vantagem econômica, a fazer, tolerar que se faça ou deixar fazer alguma coisa.",
   :acao_penal => "",
@@ -496,15 +384,19 @@ Crime.create!(
   :pena => "Reclusão, de quatro a dez anos, e multa."  
 )
 
+#10
 Crime.create!(
-  :nome => "Extorsão mediante seqüestro",
-  :capit => "Art. 159 - Seqüestrar pessoa com o fim de obter, para si ou para outrem, qualquer vantagem, como condição ou preço do resgate.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de oito a quinze anos."  
-)
-
-Crime.create!(
+:base => %{
+Art. 163 - Destruir, inutilizar ou deteriorar coisa alheia:
+\nPena - detenção, de um a seis meses, ou multa.
+\nDano qualificado
+\nParágrafo único - Se o crime é cometido:
+\nI - com violência à pessoa ou grave ameaça;
+\nII - com emprego de substância inflamável ou explosiva, se o fato não constitui crime mais grave
+\nIII - contra o patrimônio da União, Estado, Município, empresa concessionária de serviços \npúblicos ou sociedade de economia mista;
+\nIV - por motivo egoístico ou com prejuízo considerável para a vítima:
+\nPena - detenção, de seis meses a três anos, e multa, além da pena correspondente à violência.
+},
   :nome => "Dano",
   :capit => "Art. 163 - Destruir, inutilizar ou deteriorar coisa alheia.",
   :acao_penal => "",
@@ -512,23 +404,27 @@ Crime.create!(
   :pena => "Detenção, de um a seis meses, ou multa"  
 )
 
+#11
 Crime.create!(
-  :nome => "Apropriação Indébita",
-  :capit => "Art. 168 - Apropriar-se de coisa alheia móvel, de que tem a posse ou a detenção.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de um a quatro anos, e multa."  
-)
-
-Crime.create!(
-  :nome => "Apropriação indébita previdenciária",
-  :capit => "Art. 168-A. Deixar de repassar à previdência social as contribuições recolhidas dos contribuintes, no prazo e forma legal ou convencional.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de 2 (dois) a 5 (cinco) anos, e multa."  
-)
-
-Crime.create!(
+:base => %{
+Art. 171 - Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento:
+\nPena - reclusão, de um a cinco anos, e multa.
+\n§ 1º - Se o criminoso é primário, e é de pequeno valor o prejuízo, o juiz pode aplicar a pena conforme o disposto no art. 155, § 2º.
+\n§ 2º - Nas mesmas penas incorre quem:
+\nDisposição de coisa alheia como própria
+\nI - vende, permuta, dá em pagamento, em locação ou em garantia coisa alheia como própria;
+\nAlienação ou oneração fraudulenta de coisa própria
+\nII - vende, permuta, dá em pagamento ou em garantia coisa própria inalienável, gravada de ônus ou litigiosa, ou imóvel que prometeu vender a terceiro, mediante pagamento em prestações, silenciando sobre qualquer dessas circunstâncias;
+\nDefraudação de penhor
+\nIII - defrauda, mediante alienação não consentida pelo credor ou por outro modo, a garantia pignoratícia, quando tem a posse do objeto empenhado;
+\nFraude na entrega de coisa
+\nIV - defrauda substância, qualidade ou quantidade de coisa que deve entregar a alguém;
+\nFraude para recebimento de indenização ou valor de seguro
+\nV - destrói, total ou parcialmente, ou oculta coisa própria, ou lesa o próprio corpo ou a saúde, ou agrava as conseqüências da lesão ou doença, com o intuito de haver indenização ou valor de seguro;
+\nFraude no pagamento por meio de cheque
+\nVI - emite cheque, sem suficiente provisão de fundos em poder do sacado, ou lhe frustra o pagamento.
+\n§ 3º - A pena aumenta-se de um terço, se o crime é cometido em detrimento de entidade de direito público ou de instituto de economia popular, assistência social ou beneficência.
+},
   :nome => "Estelionato",
   :capit => "Art. 171 - Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento.",
   :acao_penal => "",
@@ -536,162 +432,19 @@ Crime.create!(
   :pena => "Reclusão, de um a cinco anos, e multa"  
 )
 
+#12
 Crime.create!(
-  :nome => "Receptação",
-  :capit => "Art. 180 - Adquirir, receber, transportar, conduzir ou ocultar, em proveito próprio ou alheio, coisa que sabe ser produto de crime, ou influir para que terceiro, de boa-fé, a adquira, receba ou oculte.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de um a quatro anos, e multa"  
-)
-
-Crime.create!(
-  :nome => "Violação de direito autoral",
-  :capit => "Art. 184. Violar direitos de autor e os que lhe são conexos.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de três meses a um ano, ou multa."  
-)
-
-Crime.create!(
-  :nome => "Aliciamento de trabalhadores de um local para outro do território nacional",
-  :capit => "Art. 207 - Aliciar trabalhadores, com o fim de levá-los de uma para outra localidade do território nacional.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de um a três anos, e multa."  
-)
-
-Crime.create!(
-  :nome => "Ultraje a culto e impedimento ou perturbação de ato a ele relativo",
-  :capit => "Art. 208 - Escarnecer de alguém publicamente, por motivo de crença ou função religiosa; impedir ou perturbar cerimônia ou prática de culto religioso; vilipendiar publicamente ato ou objeto de culto religioso.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de um mês a um ano, ou multa."  
-)
-
-Crime.create!(
-  :nome => "Destruição, subtração ou ocultação de cadáver",
-  :capit => "Art. 211 - Destruir, subtrair ou ocultar cadáver ou parte dele.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de um a três anos, e multa."  
-)
-
-Crime.create!(
-  :nome => "Vilipêndio a cadáver",
-  :capit => "Art. 212 - Vilipendiar cadáver ou suas cinzas.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de um a três anos, e multa."  
-)
-
-Crime.create!(
+:base => %{
+Art. 213. Constranger alguém, mediante violência ou grave ameaça, a ter conjunção carnal ou a praticar ou permitir que com ele se pratique outro ato libidinoso: 
+\nPena - reclusão, de 6 (seis) a 10 (dez) anos.
+\n§ 1o Se da conduta resulta lesão corporal de natureza grave ou se a vítima é menor de 18 (dezoito) ou maior de 14 (catorze) anos:
+\nPena - reclusão, de 8 (oito) a 12 (doze) anos. 
+\n§ 2o Se da conduta resulta morte:
+\nPena - reclusão, de 12 (doze) a 30 (trinta) anos
+},
   :nome => "Estupro",
   :capit => "Art. 213 - Constranger alguém, mediante violência ou grave ameaça, a ter conjunção carnal ou a praticar ou permitir que com ele se pratique outro ato libidinoso.",
   :acao_penal => "",
   :competencia => "",
   :pena => "Reclusão, de seis a dez anos."  
-)
-
-Crime.create!(
-  :nome => "Violação sexual mediante fraude",
-  :capit => "Art. 215 - Ter conjunção carnal ou praticar outro ato libidinoso com alguém, mediante fraude ou outro meio que impeça ou dificulte a livre manifestação de vontade da vítima.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a seis anos."  
-)
-
-Crime.create!(
-  :nome => "Assédio sexual",
-  :capit => "Art. 216-A - Constranger alguém com o intuito de obter vantagem ou favorecimento sexual, prevalecendo-se o agente da sua condição de superior hierárquico ou ascendência inerentes ao exercício de emprego, cargo ou função.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de um a dois anos."  
-)
-
-Crime.create!(
-  :nome => "Estupro de vulnerável",
-  :capit => "Art. 217-A - Ter conjunção carnal ou praticar outro ato libidinoso com menor de 14 (catorze) anos.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de oito a quinze anos."  
-)
-
-Crime.create!(
-  :nome => "Corrupção de menores",
-  :capit => "Art. 218 - Induzir alguém menor de 14 (catorze) anos a satisfazer a lascívia de outrem.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a cinco anos."  
-)
-
-Crime.create!(
-  :nome => "Satisfação de lascívia mediante presença de criança ou adolescente",
-  :capit => "Art. 218-A - Praticar, na presença de alguém menor de 14 (catorze) anos, ou induzi-lo a presenciar, conjunção carnal ou outro ato libidinoso, a fim de satisfazer lascívia própria ou de outrem.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a quatro anos."  
-)
-
-Crime.create!(
-  :nome => "Favorecimento da prostituição ou outra forma de exploração sexual de vulnerável",
-  :capit => "Art. 218-B - Submeter, induzir ou atrair à prostituição ou outra forma de exploração sexual alguém menor de 18 (dezoito) anos ou que, por enfermidade ou deficiência mental, não tem o necessário discernimento para a prática do ato, facilitá-la, impedir ou dificultar que a abandone.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de quatro a dez anos."  
-)
-
-Crime.create!(
-  :nome => "Mediação para servir à lascívia de outrem",
-  :capit => "Art. 227 - Induzir alguém a satisfazer a lascívia de outrem.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de um a três anos."  
-)
-
-Crime.create!(
-  :nome => "Favorecimento da prostituição ou outra forma de exploração sexual",
-  :capit => "Art. 228 - Induzir ou atrair alguém à prostituição ou outra forma de exploração sexual, facilitá-la, impedir ou dificultar que alguém a abandone.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a cinco anos, e multa."  
-)
-
-Crime.create!(
-  :nome => "Casa de prostituição",
-  :capit => "Art. 229 - Manter, por conta própria ou de terceiro, estabelecimento em que ocorra exploração sexual, haja, ou não, intuito de lucro ou mediação direta do proprietário ou gerente.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a cinco anos, e multa."  
-)
-
-Crime.create!(
-  :nome => "Rufianismo",
-  :capit => "Art. 230 - Tirar proveito da prostituição alheia, participando diretamente de seus lucros ou fazendo-se sustentar, no todo ou em parte, por quem a exerça.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de um a quatro anos, e multa."  
-)
-
-Crime.create!(
-  :nome => "Tráfico internacional de pessoa para fim de exploração sexual",
-  :capit => "Art. 231 - Promover ou facilitar a entrada, no território nacional, de alguém que nele venha a exercer a prostituição ou outra forma de exploração sexual, ou a saída de alguém que vá exercê-la no estrangeiro.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de três a oito anos."  
-)
-
-Crime.create!(
-  :nome => "Tráfico interno de pessoa para fim de exploração sexual",
-  :capit => "Art. 231-A - Promover ou facilitar o deslocamento de alguém dentro do território nacional para o exercício da prostituição ou outra forma de exploração sexual.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Reclusão, de dois a seis anos."  
-)
-
-Crime.create!(
-  :nome => "Ato obsceno",
-  :capit => "Art. 233 - Praticar ato obsceno em lugar público, ou aberto ou exposto ao público.",
-  :acao_penal => "",
-  :competencia => "",
-  :pena => "Detenção, de três meses a um ano, ou multa."  
 )

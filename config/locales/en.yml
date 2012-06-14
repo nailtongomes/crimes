@@ -17,7 +17,6 @@ en:
         perguntas: Tenho muitas perguntas...
         confuso: Estou confuso quanto ao como isso funciona.
         elogio: Acho que tá ficando bom. :D
-        patrocinio: Quero vincular meu cartão de visita ou publicidade.
         apoio: Quero te ajudar. 
         outro: Outro assunto.
 
@@ -244,14 +243,6 @@ en:
         sobrenome: "Sobrenome"
         password: "Senha"
         email: "E-Mail"        
-      modalidade: 
-        anotacoes: "Anotações"
-        pena: "Pena"
-        b_legal: "Base Legal"
-        titulo: "Título"
-      argumento: 
-        corpo: "Corpo"
-        ref: "Referência"        
       contato: 
         email: "E-Mail"
         nome: "Nome"

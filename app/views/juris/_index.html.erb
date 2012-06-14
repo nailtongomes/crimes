@@ -1,0 +1,17 @@
+<% if not @juris.empty? %>
+			<% @juris.each do |juri| %>
+			<h3>
+			<%= juri.orgao %>
+			</h3>
+			<p>
+			<%= textilize juri.corpo %>
+			</p>			
+			<p>
+			<b>Referência:</b>
+			<%= textilize juri.ref %>
+			</p>
+			<hr class="thick" />
+			<% end %>
+<% else %>
+	<h3>Não foram cadastradas jurisprudências...</h3>
+<% end %>

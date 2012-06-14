@@ -1,0 +1,35 @@
+<header class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<%= link_to "Crimes Brasileiros", root_path, id: "logo" %>
+			<nav>
+				<ul class="nav pull-right">
+					<li>
+						<%= link_to "Início", root_path, :title => "Ir para a página inicial" %>
+					</li>
+					<li>
+						<%= link_to "Crimes", crimes_path, :title => "Ver crimes" %>
+					</li>					
+					<li>
+						<%= link_to "Contato", new_contato_path, :title => "Entrar em contato" %>
+					</li>
+					<li>
+						<%= link_to "Dic.", dic_url, :title => "Dicionário com as expressões e termos aqui usados" %>
+					</li>
+					<li>
+						<%= link_to "Sentenças", sentencas_url, :title => "Banco de sentenças" %>
+					</li>
+					<li>
+						<%= link_to "Sobre", sobre_url, :title => "Conhecer mais sobre esta ferramenta" %>
+					</li>
+					<li>
+						<%= link_to "ARG.", arg_url, :title => "Conhecer o assistente de argumentação: ARG." %>
+					</li>
+					<li>
+						<%= link_to "Admin", admin_crimes_path, :title => "Entrar no módulo administrativo" %>
+					</li>					
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

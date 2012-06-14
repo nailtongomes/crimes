@@ -1,12 +1,5 @@
-﻿<% content_for :sidebar do %> 
-<br/>
-<br/>
-<br/>
-<div align="center">
-<iframe src="http://www.dicio.com.br/widgets/blog.php?w=240" id="dicio_widget" name="dicio_widget" scrolling="no" frameborder="0" width="240" height="200"></iframe>
-</div>
-<% end %>
-
+<div class="row">
+﻿<div class="span8">
 ﻿<h2 style="text-align: center">[ <a>Dic.</a> ]</h2>
 <p>
 	Antes  de qualquer coisa, você conhece a teoria do crime? Se não, recomenda-se:
@@ -34,4 +27,12 @@
 <p>
 	Abaixo, lista das expressões aqui usadas:
 	[ Em construção ]
+
 </p>
+</div>
+<% content_for :sidebar do %> 
+<div class="span4 pull-right">  
+<iframe src="http://www.dicio.com.br/widgets/blog.php?w=240" id="dicio_widget" name="dicio_widget" scrolling="no" frameborder="0" width="240" height="200"></iframe>
+</div>
+<% end %>
+</div>

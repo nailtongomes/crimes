@@ -8,7 +8,6 @@ Crimes::Application.routes.draw do
    end
 #ROTAS PÚBLICAS
   resources :crimes do
-    resources :modalidades, :only => [:index]
     resources :casos, :only => [:create, :index]
     resources :doutrinas, :only => [:create, :index]
     resources :juris, :only => [:create, :index]
@@ -24,7 +23,6 @@ Crimes::Application.routes.draw do
   namespace :admin do
     root :to => "crimes#index"
     resources :crimes do
-      resources :modalidades
       resources :casos
       resources :doutrinas
       resources :juris
@@ -43,9 +41,6 @@ Crimes::Application.routes.draw do
   
   root :to => "home#index"
   get "home/index"
-
-#  match 'crimes/:crime_id/argumentos' => 'argumentos#index', :as => :argumentos
-#  match 'crimes/:crime_id/modalidades' => 'modalidades#index', :as => :modalidades  
 
 # The priority is based upon order of creation:
 # first created -> highest priority.

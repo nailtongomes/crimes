@@ -1,52 +1,65 @@
-<% content_for :sidebar do %>
-<ul>
-	<% if @crime.modalidades.count > 0 %>
-	<h2><%= link_to "ESPÉCIES (#{@crime.modalidades.count.to_s})", crime_modalidades_path(@crime.id), :title => "Ver espécies" %></h2>
-	<ul>
-			<% @crime.modalidades.each do |modalidade| %>
-			<li>
-			<%= modalidade.titulo %>
-			</li>
-		<% end %>
-	</ul>
-	<% end %>	
-	<br />
-	<% if @crime.doutrinas.count > 0 %>
-	<h2><%= link_to "DOUTRINAS (#{@crime.doutrinas.count.to_s})", crime_doutrinas_path(@crime.id), :title => "Ver doutrinas" %></h2>
-	<ul>
-			<% @crime.doutrinas.each do |doutrina| %>
-			<li>
-			<%= doutrina.autor %>
-			</li>
-		<% end %>
-	</ul>
-	<% end %>	
-</ul>
-<% end %>
-<div class="entry">
-	<h3 style="text-align: center"><a><%= @crime.nome %></a></h3>
-	<hr class="thick" />
-	<p>
-		<b>Capitulação: </b>
-		<%= @crime.capit %>
-	</p>
-	<p>
-		<b>Pena: </b>
-		<%= @crime.pena %>
-	</p>
-	<p>
-		<b>Ação Penal: </b>
-		<%= @crime.acao_penal %>
-	</p>
-	<p>
-		<b>Competência: </b>
-		<%= @crime.competencia %>
-	</p>
-	<hr class="thick" />
-	<p class="links" style="text-align: center">		
-		<%= link_to "JURISPRUDÊNCIAS(#{@crime.juris.count.to_s})", crime_juris_path(@crime.id), :class =>"button", :title => "Ver Jurisprudências" %>
-		<%= link_to "TEMAS(#{@crime.temas.count.to_s})", crime_temas_path(@crime.id), :class =>"button", :title => "Ver Temas" %>		
-		<%= link_to "CASOS(#{@crime.casos.count.to_s})", crime_casos_path(@crime.id), :class =>"button", :title => "Ver Casos" %>
-		<%= link_to "QUESTÕES(#{@crime.qts.count.to_s})", crime_qts_path(@crime.id), :class =>"button", :title => "Ver Questões" %>
-	</p>
-</div>
+<div class="row">
+	<div class="span12">
+		<h3 style="text-align: center"><a><%= @crime.nome %></a></h3>
+		<hr class="thick" />
+		<p>
+			<b>Capitulação: </b>
+			<%= @crime.capit %>
+		</p>
+		<p>
+			<b>Pena: </b>
+			<%= @crime.pena %>
+		</p>
+		<p>
+			<b>Ação Penal: </b>
+			<%= @crime.acao_penal %>
+		</p>
+		<p>
+			<b>Competência: </b>
+			<%= @crime.competencia %>
+		</p>
+		<div class="tabbable tabs-below">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#lF" data-toggle="tab">Artigo</a>
+				</li>
+				<li>
+					<a href="#lA" data-toggle="tab">Doutrinas</a>
+				</li>
+				<li>
+					<a href="#lC" data-toggle="tab">Casos</a>
+				</li>
+				<li>
+					<a href="#lB" data-toggle="tab">Temas Relacionados</a>
+				</li>
+				<li>
+					<a href="#lE" data-toggle="tab">Jurisprudências</a>
+				</li>
+				<li>
+					<a href="#lD" data-toggle="tab">Questões</a>
+				</li>				
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="lF">
+					<%= textilize @crime.base %>
+				</div>
+				<div class="tab-pane" id="lA">
+					<%= render "doutrinas/index"%>
+				</div>
+				<div class="tab-pane" id="lC">
+					<%= render "casos/index"%>
+				</div>
+				<div class="tab-pane" id="lB">
+					<%= render "temas/index"%>
+				</div>
+				<div class="tab-pane" id="lD">
+					<%= render "qts/index"%>
+				</div>
+				<div class="tab-pane" id="lE">
+					<%= render "juris/index"%>
+				</div>				
+			</div>
+		</div>
+
+	</div>
+</div>	

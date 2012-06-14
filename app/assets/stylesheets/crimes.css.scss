@@ -1,0 +1,299 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;   
+  text-align: justify;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  a {
+    color: $gray;
+    &:hover { 
+      color: $grayDarker;
+    }
+  }  
+  small { 
+    float: left; 
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.6em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+    }
+    p {
+      text-align: justify;
+    }    
+  }
+}
+
+/* Search */
+#search {
+	width:320px;
+	height:40px;
+	padding:0px;
+}
+#search form {
+	margin:0px;
+	padding:0px;
+}
+#search fieldset {
+	margin:0;
+	padding:0;
+	border:none;
+}
+#search-text {
+	width:250px;
+	outline:none;
+	background:#F5F0E7;
+	border:1px solid #D7D0C0;
+	padding:10px;
+	text-transform:lowercase;
+	font:normal 14px Arial,Helvetica,sans-serif;
+	color:#454545;
+}
+#search-submit {
+	width:62px;
+	height:22px;
+	display:none;
+	border:none;
+	color:#FFFFFF;
+}
+
+.links {
+	height:10px;
+	padding:0px;
+	font-size:12px;
+	font-weight:normal;
+	color:#1C1C1C;
+}
+.valor {
+	padding:0px;
+	font-size:13px;
+	font-weight:normal;
+	color:#1C1C1C;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+#error_explanation {
+  color:#f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+#toTop {
+	width:100px;
+	z-index:10;
+	border:1px solid #333;
+	background:#121212;
+	text-align:center;
+	padding:5px;
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	cursor:pointer;
+	display:none;
+	color:#fff;
+	text-transform:lowercase;
+	font-size:0.7em;
+}
+
+.tbox {
+	position:absolute;
+	display:none;
+	padding:14px 17px;
+	z-index:900
+}
+.tinner {
+	padding:15px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	background:#fff url("/assets/preload.gif") no-repeat 50% 50%;
+	border-right:1px solid #333;
+	border-bottom:1px solid #333
+}
+.tmask {
+	position:absolute;
+	display:none;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	background:#000;
+	z-index:800
+}
+.tclose {
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	background:url("/assets/close.png") no-repeat
+}
+.tclose:hover {
+	background-position:0 -30px
+}
+#error {
+	background:#ff6969;
+	color:#fff;
+	text-shadow:1px 1px #cf5454;
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	padding:0
+}
+#error .tcontent {
+	padding:10px 14px 11px;
+	border:1px solid #ffb8b8;
+	-moz-border-radius:5px;
+	border-radius:5px
+}
+#success {
+	background:#2ea125;
+	color:#fff;
+	text-shadow:1px 1px #1b6116;
+	border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	padding:10;
+	-moz-border-radius:0;
+	border-radius:0
+}
+#bluemask {
+	background:#4195aa
+}
+#frameless {
+	padding:0
+}
+#frameless .tclose {
+	left:6px
+}

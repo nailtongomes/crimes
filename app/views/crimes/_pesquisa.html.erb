@@ -1,10 +1,10 @@
-<% content_for :sidebar do %> 
-<h2 style="text-align: center"> [ Pesquise ]</h2>
+<% content_for :sidebar do %>
+<div class="span4 pull-right">
+	<h2 style="text-align: center"> [ Pesquise ]</h2>
 	<div id="search" >
 		<%= form_tag crimes_path, :method => :get do %>
 		<%= text_field_tag :search, "",
 		:placeholder => "Nomen Juris OU Capitulação",
-		:size => 50,
 		:type => "search",
 		:class => "search-text" %>
 		<% end %>
@@ -12,11 +12,12 @@
 	<p style="text-align: justify">
 		[ pesquise por nome do crime ou por palavra contida na capitulação do crime ]
 	</p>
-<div class="tiny">
-<h2>[ Legislação ]</h2>
-	<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ CÓDIGO PENAL ] </h3> 
-	<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/leis/2003/L10.826.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 10.826/2003 ] </h3> 
-	<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 11.340/2006 ] </h3>
-	<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 11.343/2006 ] </h3>
-</div>	
-<% end %>
+	<div class="tiny">
+		<h2>[ Legislação ]</h2>
+		<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ CÓDIGO PENAL ] </h3>
+		<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/leis/2003/L10.826.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 10.826/2003 ] </h3>
+		<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 11.340/2006 ] </h3>
+		<h3 onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 11.343/2006 ] </h3>
+	</div>
+	<% end %>
+		</div>

@@ -1,6 +1,13 @@
+<div class="row">
 ﻿<% content_for :sidebar do %>
-	<%= image_tag("cont.jpg", :size => "250x200") %>
+	<div class="span4 pull-right">  
+	<center>
+	<%= image_tag("cont.jpg", :size => "150x100") %>
+	</center>
+	</div>
 <% end %>
+﻿<div class="span8">
+<h2 style="text-align: center">[ <a>Contato</a> ]</h2>
 
 <%= form_for @contato do |f| %>
   <%= error_messages_for @contato %>
@@ -17,5 +24,7 @@
     <%= f.text_area :msg, :cols => "69", :rows => "7", :placeholder => "Campo para informações..." %>
   </div>
   <hr class="thick" />
-  <p><%= f.submit  "Enviar", :disable_with => "Aguarde...", :class => "button" %> ou <%= link_to "Cancelar", new_contato_path %> </p>
+  <p><%= f.submit  "Enviar", :disable_with => "Aguarde...", :class => "btn" %> ou <%= link_to "Cancelar", new_contato_path %> </p>
 <% end %>
+</div>
+</div>

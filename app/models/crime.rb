@@ -14,14 +14,13 @@
 #
 
 class Crime < ActiveRecord::Base
-  has_many :modalidades, :dependent => :destroy
   has_many :casos, :dependent => :destroy
   has_many :doutrinas, :dependent => :destroy
   has_many :juris, :dependent => :destroy
   has_many :qts, :dependent => :destroy
   has_many :temas, :dependent => :destroy
   
-  attr_accessible :acao_penal, :capit, :competencia, :nome, :pena, :fonte
+  attr_accessible :acao_penal, :capit, :competencia, :nome, :pena, :fonte, :base
   
   default_scope :order => "capit"
   

@@ -1,0 +1,18 @@
+<% if not @casos.empty? %>
+			<% @casos.each do |caso| %>
+			<p>
+			<h3><%= caso.autor %></h3>
+			</p>
+			<p style="text-align: justify">
+			<%= textilize caso.corpo %>
+			</p>
+			<p>
+			<b>Referência:</b>
+			<%= textilize caso.ref %>
+			</p>			
+<hr class="thick" />
+			<% end %>
+
+<% else %>
+	<h3>Não foram cadastrados casos...</h3>
+<% end %>

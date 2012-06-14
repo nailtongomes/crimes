@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120430215553) do
   create_table "crimes", :force => true do |t|
     t.string   "nome"
     t.text     "capit"
+    t.text     "base"
     t.string   "pena"
     t.string   "acao_penal"
     t.string   "competencia"
@@ -69,18 +70,6 @@ ActiveRecord::Schema.define(:version => 20120430215553) do
   end
 
   add_index "juris", ["crime_id"], :name => "index_juris_on_crime_id"
-
-  create_table "modalidades", :force => true do |t|
-    t.string   "titulo"
-    t.text     "b_legal"
-    t.text     "anotacoes"
-    t.string   "pena"
-    t.integer  "crime_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "modalidades", ["crime_id"], :name => "index_modalidades_on_crime_id"
 
   create_table "qts", :force => true do |t|
     t.text     "assertiva"

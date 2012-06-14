@@ -1,0 +1,12 @@
+<% if not @qts.empty? %>
+			<% @qts.each do |qt| %>
+			<p style="text-align: justify">
+			<%= textilize qt.assertiva.capitalize %>
+			<p style="text-align: right"> [<b style="color: white""><%= qt.resposta %></b>]</p>  			
+			</p>				
+			<hr class="thick" />
+			<p style="text-align: right">Dê dois cliques entre os colchetes para ver a resposta.</p>
+			<% end %>
+<% else %>
+	<h3>Não foram cadastrados questões...</h3>
+<% end %>

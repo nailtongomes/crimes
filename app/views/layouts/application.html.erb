@@ -26,51 +26,14 @@
 		</script>
 	</head>
 	<body>
-		<div id="menu-wrapper">
-			<%= render "layouts/menu"%>
-		</div>
-		<div id="header-wrapper">
-			<div id="header">
-				<div id="logo">
-					<h1><a href="#">[ Crimes do <span>Direito Penal</span> Brasileiro</a> ]</h1>
-					<br/>
-					<p>
-						v.0.0.11 [ em construção ] - Prev. Versão Final: 28.10.2012
-					</p>
-				</div>
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<div id="sidebar">
+				<%= yield :sidebar %>
 			</div>
-		</div>
-		<div id="wrapper">
-			<!-- end #header -->
-			<div id="page">
-				<div id="page-bgtop">
-					<div id="page-bgbtm">
-						<div id="content">
-							<div class="post">
-								<div>
-									<%= flash_messages %>
-									<%= yield %>
-								</div>
-							</div>
-						</div>
-						<!-- end #content -->
-						<div id="sidebar">
-							<%= yield :sidebar %>
-						</div>
-						<!-- end #sidebar -->
-					</div>
-				</div>
-			</div>
-			<!-- end #page -->
-		</div>
-		<div id="menu-bottom">
-			<%= render "layouts/menu"%>
-		</div>
-		<div id="footer">
-			<p>
-				crimes.herokuapp.com. Todos os direitos reservados. | Última Atualização: 03/05/2012 -
-				<a href="https://www.twitter.com/nailtongomes" target="_blank">@nailtongomes</a>
-			</p>
+
+			<%= yield %>
+			<%= render 'layouts/footer' %>
 		</div>
 		<script type="text/javascript">
 			jQuery(document).ready(function() {

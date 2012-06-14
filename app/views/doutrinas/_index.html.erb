@@ -1,0 +1,24 @@
+<% if not @doutrinas.empty? %>
+<div class="accordion" id="accordion1">
+	<% @doutrinas.each do |doutrina| %>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse<%= doutrina.id %>"> <%= doutrina.autor.upcase %> </a>
+		</div>
+		<div id="collapse<%= doutrina.id %>" class="accordion-body collapse in">
+			<div class="accordion-inner">
+				<p style="text-align: justify">
+					<%= textilize doutrina.corpo %>
+				</p>
+				<p>
+					<b>Referência:</b>
+					<%= textilize doutrina.ref %>
+				</p>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+<% else %>
+<h3>Não foram cadastradas doutrinas...</h3>
+<% end %>

@@ -2,20 +2,12 @@ class RefactoringAll < ActiveRecord::Migration
   def up
     create_table :crimes do |t|
       t.string :nome
+      t.text   :base
       t.text   :capit
       t.string :pena
       t.string :acao_penal
       t.string :competencia
       t.string :fonte, :default => "CPB - DECRETO-LEI No 2.848, DE 7 DE DEZEMBRO DE 1940."
-      t.timestamps
-    end
-
-    create_table :modalidades do |t|
-      t.string :titulo
-      t.text :b_legal
-      t.text :anotacoes
-      t.string :pena
-      t.references :crime
       t.timestamps
     end
 
@@ -69,7 +61,6 @@ class RefactoringAll < ActiveRecord::Migration
     add_index :casos, :crime_id
     add_index :temas, :crime_id
     add_index :qts, :crime_id
-    add_index :modalidades, :crime_id
   end
 
   def down
