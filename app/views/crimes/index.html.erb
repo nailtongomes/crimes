@@ -1,10 +1,13 @@
 <div class="row">
 	<div class="span8">
 		<h2 style="text-align: center"> [ <a>LISTANDO <%= @crimes.count %> CRIME(S)</a> ]</h2>
+		<p style="text-align: center">
+		[ clique no nome do crime para abri-lo ]
+		</p>
 		<% @crimes.each do |crime| %>
 		<hr class="thick" />
 		<div class="entry">
-			<h3 style="text-align: center"><%= link_to crime.nome, crime, :title => "Clique para abrir o crime" %></h3>
+			<h3 style="text-align: left"><%= link_to crime.nome.upcase, crime, :title => "Clique para abrir o crime" %></h3>
 			<hr class="point" />
 			<p class="valor">
 				<b>Capitulação: </b>

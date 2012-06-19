@@ -1,19 +1,26 @@
 <%= form_for [:admin, @crime] do |f| %>
 <%= error_messages_for @crime %>
 <div class="field">
-	<%= f.text_field :nome, :size => "70", :placeholder => "Nome ou Nomen Juris", :class => "nome"%>
+	<%= f.text_field :nome, :size => "120", :placeholder => "Nome ou Nomen Juris", :class => "nome"%>
+</div>
+<div class="field">
+	<%= f.text_area :base, :cols => "69", :rows => "10", :placeholder => "Artigo completo", :class => "base" %>
 </div>
 <div class="field">
 	<%= f.text_area :capit, :cols => "69", :rows => "4", :placeholder => "Capitulação: Art. e Preceito Primário", :class => "capit" %>
 </div>
 <div class="field">
-	<%= f.text_field :pena, :size => "70", :placeholder => "Pena base", :class => "pena"%>
+	<%= f.text_field :pena, :size => "120", :placeholder => "Pena base", :class => "pena"%>
 </div>
 <div class="field">
-	<%= f.text_field :acao_penal, :size => "70", :placeholder => "Ação Penal", :class => "acao_penal" %>
+	<%= f.text_field :acao_penal, :size => "120", :placeholder => "Ação Penal", :class => "acao_penal" %>
 </div>
 <div class="field">
-	<%= f.text_field :competencia, :size => "70", :placeholder => "Competência", :class => "competencia" %>
+	<%= f.text_field :competencia, :size => "120", :placeholder => "Competência", :class => "competencia" %>
+</div>
+
+<div class="field">
+	<%= f.text_field :fonte, :size => "120", :placeholder => "Fonte", :class => "fonte" %>
 </div>
 
 <hr class="thick" />

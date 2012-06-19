@@ -10,7 +10,7 @@ class DoutrinasController < ApplicationController
     @crime = Crime.find(params[:crime_id])
     if @doutrina = @crime.doutrinas.create(params[:doutrina])
       flash[:notice] = "Doutrina submetida aos moderadores..."
-      redirect_to crime_doutrinas_path
+      redirect_to @crime
     else
       flash[:alert] = 'Erro!'
     end

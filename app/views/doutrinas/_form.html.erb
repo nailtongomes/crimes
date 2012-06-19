@@ -1,11 +1,9 @@
-<br/>
 <%= form_for([@crime, @crime.doutrinas.build]) do |f| %>  
   <div class="field">
-    <%= f.text_field :autor, :size => "70", :placeholder => "Autor", :class => "ref" %><br />
-    [ Qual o doutrinador? ]
+    <%= f.text_field :autor, :size => "70", :placeholder => "Autoria / Doutrinador", :class => "ref" %>
   </div>
   <div class="field">
-    <%= f.text_area :corpo, :cols => "69", :rows => "10", :placeholder => "Texto da doutrina", 
+    <%= f.text_area :corpo, :cols => "69", :rows => "10", :placeholder => "Corpo/Texto da doutrina", 
     :value => %{<b>Conceito:</b>
     			\n<b>Bem Jurídico:</b>
     			\n<b>Objeto Material:</b>
@@ -25,9 +23,7 @@
     <%= f.text_field :ref, :size => "70", :placeholder => "Referência", :class => "ref" %> <br />
     [ SOBRENOME, PRENOME abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, ano de publicação da obra. Nº de páginas ou volume. (Coleção ou série) ]
   </div>
-  <p>
-    <hr class="thick" />
-    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "button"%> ou <%= link_to "Cancelar", @crime %><br />
+  <hr/>
+    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "btn btn-primary"%> ou <%= link_to "Cancelar", @crime %><br />
     [ A doutrina inserida ficará pedente de moderação. ]
-  </p>
 <% end %>

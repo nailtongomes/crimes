@@ -22,7 +22,7 @@ class Crime < ActiveRecord::Base
   
   attr_accessible :acao_penal, :capit, :competencia, :nome, :pena, :fonte, :base
   
-  default_scope :order => "capit"
+  default_scope :order => "nome"
   
   def self.search(terms) 
     where("LOWER(nome) LIKE :t OR LOWER(capit) LIKE :t", :t => "%#{terms.downcase}%")

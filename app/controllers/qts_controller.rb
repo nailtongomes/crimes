@@ -10,7 +10,7 @@ class QtsController < ApplicationController
     @crime = Crime.find(params[:crime_id])
     if @qt = @crime.qts.create(params[:qt])
       flash[:notice] = "Questao submetida aos moderadores..."
-      redirect_to crime_qts_path
+      redirect_to @crime
     else
       flash[:alert] = 'Erro!'
     end

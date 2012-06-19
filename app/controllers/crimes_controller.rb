@@ -13,7 +13,7 @@ class CrimesController < ApplicationController
     @casos = @crime.casos.ativo
     @qts =   @crime.qts.ativo
     @juris =   @crime.juris.ativo    
-    
+       
     respond_with @crime
   end
 end

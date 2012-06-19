@@ -10,7 +10,7 @@ class TemasController < ApplicationController
     @crime = Crime.find(params[:crime_id])
     if @tema = @crime.temas.create(params[:tema])
       flash[:notice] = "Tema submetido aos moderadores..."
-      redirect_to crime_temas_path
+      redirect_to @crime
     else
       flash[:alert] = 'Erro!'
     end

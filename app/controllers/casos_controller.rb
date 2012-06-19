@@ -10,7 +10,7 @@ class CasosController < ApplicationController
     @crime = Crime.find(params[:crime_id])    
     if @caso = @crime.casos.create(params[:caso])
     flash[:notice] = "Caso submetido aos moderadores..."  
-    redirect_to crime_casos_path
+    redirect_to @crime
     else
     flash[:alert] = 'Erro!'
     end

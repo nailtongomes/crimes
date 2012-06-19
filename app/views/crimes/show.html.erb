@@ -1,6 +1,14 @@
 <div class="row">
+	<div class="span12">	
+		<p>Acesso rápido ao texto legal: (clique no link) </p>
+		<a onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ CÓDIGO PENAL ] </a>
+		| <a onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/leis/2003/L10.826.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 10.826/2003 ] - ARMAS </a>
+		| <a onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 11.340/2006 ] - Mª PENHA </a>
+		| <a onclick="TINY.box.show({iframe:'http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm',boxid:'frameless',width:750,height:450,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})"> [ LEI - 11.343/2006 ] - DROGAS </a>
+		<hr class="thick" />
+	</div>	
 	<div class="span12">
-		<h3 style="text-align: center"><a><%= @crime.nome %></a></h3>
+		<h3 style="text-align: center"><a><%= @crime.nome.upcase %></a></h3>		
 		<hr class="thick" />
 		<p>
 			<b>Capitulação: </b>
@@ -37,11 +45,14 @@
 				</li>
 				<li>
 					<a href="#lD" data-toggle="tab">Questões</a>
-				</li>				
+				</li>
+				<li>
+					<a href="#lG" data-toggle="tab">Contribuir</a>
+				</li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="lF">
-					<%= textilize @crime.base %>
+					<%= textilize @crime.base unless @crime.base.nil? %>
 				</div>
 				<div class="tab-pane" id="lA">
 					<%= render "doutrinas/index"%>
@@ -57,6 +68,9 @@
 				</div>
 				<div class="tab-pane" id="lE">
 					<%= render "juris/index"%>
+				</div>
+				<div class="tab-pane" id="lG">
+					<%= render "home/contrib"%>
 				</div>				
 			</div>
 		</div>

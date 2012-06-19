@@ -1,12 +1,9 @@
-<br />
 <%= form_for([@crime, @crime.temas.build]) do |f| %>  
   <div class="field">
-    <%= f.text_field :autor, :size => "70", :placeholder => "Autor", :class => "Autoria" %><br/>
-    [ Autoria do tema ]
+    <%= f.text_field :autor, :size => "70", :placeholder => "Autor", :class => "Autoria" %>
   </div>
   <div class="field">
-    <%= f.text_field :titulo, :size => "70", :placeholder => "Titulo do Tema", :class => "titulo" %><br/>
-    [ De que se trata? ]
+    <%= f.text_field :titulo, :size => "70", :placeholder => "Titulo do Tema", :class => "titulo" %>
   </div>  
   <div class="field">
     <%= f.text_area :corpo, :cols => "69", :rows => "7", :placeholder => "Texto do Tema", :class => "corpo" %><br/>
@@ -14,12 +11,10 @@
   </div>
   <div class="field">
     <%= f.text_field :ref, :size => "70", :placeholder => "Referência", :class => "ref" %><br/>
-    [ Onde você leu sobre esse tema: <a href="http://www.leffa.pro.br/textos/abnt.htm#5.8" target="_blank">em um capítulo de um livro?</a>  <a href="http://www.leffa.pro.br/textos/abnt.htm#5.17" target="_blank">Em um vídeo?</a>]<br/>
+    [ Onde você leu/viu esse tema: <a href="http://www.leffa.pro.br/textos/abnt.htm#5.8" target="_blank">em um capítulo de um livro?</a>  <a href="http://www.leffa.pro.br/textos/abnt.htm#5.17" target="_blank">Em um vídeo?</a>]<br/>
     [ Para outras formas de referências, <a href="http://www.leffa.pro.br/textos/abnt.htm">clique aqui.</a> ]
   </div>
-  <hr class="thick" />
-  <p>
-    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "button"%> ou <%= link_to "Cancelar", @crime %><br/>
-    [ O tema inserido ficará pedente de moderação. ]    
-  </p>
+  <hr/>
+    <%= f.submit "Gravar", :disable_with => "Aguarde...",  :class => "btn btn-primary"%> ou <%= link_to "Cancelar", @crime %><br/>
+    [ O tema inserido ficará pedente de moderação. ]     
 <% end %>

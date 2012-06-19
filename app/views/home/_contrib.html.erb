@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="span12">
+		<div class="tabs-below">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#2A" data-toggle="tab">Doutrina</a>
+				</li>
+				<li>
+					<a href="#2B" data-toggle="tab">Caso</a>
+				</li>
+				<li>
+					<a href="#2C" data-toggle="tab">Tema</a>
+				</li>
+				<li>
+					<a href="#2D" data-toggle="tab">Jurisprudência</a>
+				</li>
+				<li>
+					<a href="#2E" data-toggle="tab">Questão</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="2A">
+					<%= render 'doutrinas/form' %>
+				</div>
+				<div class="tab-pane" id="2B">
+					<%= render 'casos/form' %>
+				</div>
+				<div class="tab-pane" id="2C">
+					<%= render 'temas/form' %>
+				</div>
+				<div class="tab-pane" id="2D">
+					<%= render 'juris/form' %>
+				</div>
+				<div class="tab-pane" id="2E">
+					<%= render 'qts/form' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

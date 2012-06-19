@@ -5,11 +5,16 @@
 		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
 		<link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
 		<%= stylesheet_link_tag "crimes.css" %>
-		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tag %>
 		<meta name="author" content="Nailton Gomes">
 		<meta name="description" content="Crimes do Direito Penal Brasileiro">
 		<meta name="keywords" content="crimes, catalogo, direito, penal, doutrinas, jurisprudencias, questoes, casos">
+		<%= render 'layouts/shim' %>
+		<style type="text/css">
+			.fb_ltr {
+				height: 250px !important;
+			}
+		</style>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-21817757-3']);
@@ -31,7 +36,12 @@
 			<div id="sidebar">
 				<%= yield :sidebar %>
 			</div>
-
+			<% flash.each do |key, value| %>
+			<%= content_tag :div, class: "alert alert-#{key}" do -%>
+			<a class="close" data-dismiss="alert" href="#">&times;</a>
+			<%= value %>
+			<% end -%>
+			<% end %>
 			<%= yield %>
 			<%= render 'layouts/footer' %>
 		</div>
@@ -73,5 +83,7 @@
 			});
 
 		</script>
+		<%= javascript_include_tag "application" %>
+		<%= yield :script %>
 	</body>
 </html>

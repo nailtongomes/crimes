@@ -1,26 +1,53 @@
 <div class="row">
-<% content_for :sidebar do %>
-  	<div class="span4 pull-right">  
-	<%= image_tag("just.jpg", :size => "300x280") %>
+	<div class="span8">
+		<h2 style="text-align: center">[ <a>BEM VINDO</a> ]</h2>
+		<br />
+		<p>
+			É com uma enorme satisfação que apresentamos o <b>embrião</b> de um projeto extremamente ambicioso e pertinente que visa construir para
+			a divulgação e aprimoramento do que conhecemos dos crimes do nosso direito penal.
+		</p>
+		<p>
+			Queremos que você <b>encontre e armazene tudo</b> que eventualmente possa precisar em um só lugar. Uma ferramenta que lhe auxilie a <b>encontrar
+			respostas rapidamente ou referências</b> para uma possível pesquisa relacionadas aos crimes brasileiros.
+		</p>
+		<p>
+			Ainda <b>estamos construindo</b> este espaço e, corriqueiramente, amadurecendo ideias para construir algo efetivamente digno de ser fonte de conhecimento.
+		</p>
+		<p>
+			Finalmente, reservamos um espaço para <%= link_to "contato", new_contato_path, :title => "entre em contato conosco"%> e desejamos muito saber sua opinião.
+		</p>
 	</div>
+	<% content_for :sidebar do %>
+	<br/>
+	<div class="span4 pull-right">
+		<%= image_tag("just.jpg", :size => "300x280") %>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="NailtonGomes" data-lang="pt" data-hashtags="prjcrimes">Tweetar</a>
+		<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>			
+	</div>
+	<% end %>
+</div>	
+	<% content_for :script do %>
+	<div id="fb-root"></div>
+	<script>
+		( function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if(d.getElementById(id))
+					return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<script>
+		! function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if(!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, "script", "twitter-wjs");
+	</script>
 <% end %>
-
-<div class="span8">
-<h2 style="text-align: center">[ <a>Bem vindo</a> ]</h2>
-<br />
-	<p>
-	É com uma enorme satisfação que apresentamos o <b>embrião</b> de um projeto extremamente ambicioso e pertinente que visa construir para
-	a divulgação e aprimoramento do que conhecemos dos crimes do nosso direito penal.
-	</p>
-	<p>
-	Queremos que você <b>encontre e armazene tudo</b> que eventualmente possa precisar em um só lugar. Uma ferramenta que lhe auxilie a <b>encontrar
-	respostas rapidamente ou referências</b> para uma possível pesquisa relacionadas aos crimes brasileiros.
-	</p>
-	<p>
-	Ainda <b>estamos construindo</b> este espaço e, corriqueiramente, amadurecendo ideias para construir algo efetivamente digno de ser fonte de conhecimento.
-	</p>
-	<p>
-	Finalmente, reservamos um espaço para <%=link_to "contato", new_contato_path, :title => "entre em contato conosco"%> e desejamos muito saber sua opinião.
-	</p>
-</div>
-</div>

@@ -3,9 +3,9 @@
 	<% @doutrinas.each do |doutrina| %>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse<%= doutrina.id %>"> <%= doutrina.autor.upcase %> </a>
-		</div>
-		<div id="collapse<%= doutrina.id %>" class="accordion-body collapse in">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse<%= doutrina.id %>"> <%= doutrina.autor %> </a>
+		</div>			
+		<div id="collapse<%= doutrina.id %>" class="accordion-body collapse">			
 			<div class="accordion-inner">
 				<p style="text-align: justify">
 					<%= textilize doutrina.corpo %>
@@ -20,5 +20,5 @@
 	<% end %>
 </div>
 <% else %>
-<h3>Não foram cadastradas doutrinas...</h3>
+<p>Não foram cadastradas doutrinas...</p>
 <% end %>
